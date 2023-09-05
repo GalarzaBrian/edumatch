@@ -1,4 +1,4 @@
-# conociendoCórdoba
+# Edu-Match
 
 Este repositorio estará dedicado a la gestión del nuevo proyecto del módulo "Programador de aplicaciones móviles", perteneciente al Instituto Superior Politécnico Córdoba. 
 
