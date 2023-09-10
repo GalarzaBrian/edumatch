@@ -13,10 +13,9 @@
 * Daniel Vargas
 * Belen Riquelme
 * Roberto Carlos Osores
-* Gonzalez Matias Nicolas
+* [Gonzalez Matias Nicolas](https://github.com/MatiasGonzalez1)
 * Gutierrez Emma
 * David Spuler
 * Brian ivan galarza
 * Mario Nicolás Ruiz
 * Stefania Jeannette Jara Racca
- 
