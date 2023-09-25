@@ -7,55 +7,58 @@
     android:background="#2ABCED"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="181dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="40dp"
-        android:backgroundTint="#2ABCED"
-        android:text="Registrate"
-        android:textColor="#011013"
-        android:textIsSelectable="false"
-        android:textSize="24sp"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="208dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="100dp"
-        android:text="¿No tenes cuenta?"
-        android:textColor="#F6EEEE"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.056"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button3" />
-
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/carpicnho"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-164dp" />
+        android:layout_width="414dp"
+        android:layout_height="402dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/carpicnho"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="258dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:backgroundTint="#F6F6F6"
-        android:text="Iniciar sesion"
+        android:text="Iniciar sesión"
         android:textColor="#2ABCED"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="183dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="52dp"
+        android:text="¿No tienes cuenta?"
+        android:textColor="#F6EEEE"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="169dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="#2ABCED"
+        android:text="Registrate"
+        android:textColor="#011013"
+        android:textIsSelectable="false"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
