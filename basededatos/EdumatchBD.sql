@@ -1,7 +1,6 @@
 
 CREATE DATABASE Edumatch;
 
--- Utilizar la base de datos
 USE Edumatch;
 
 CREATE TABLE Usuarios (
@@ -10,7 +9,6 @@ CREATE TABLE Usuarios (
     correo VARCHAR(255) NOT NULL UNIQUE,
     contrasena VARCHAR(255) NOT NULL,
     fecha_nacimiento DATE,
-    -- Puedes agregar más campos de perfil aquí (por ejemplo, habilidades)
     fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -28,7 +26,7 @@ CREATE TABLE Proyectos (
     fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Crear la tabla de Conexiones (Matches)
+
 CREATE TABLE Conexiones (
     id INT AUTO_INCREMENT PRIMARY KEY,
     proyecto_id INT,
