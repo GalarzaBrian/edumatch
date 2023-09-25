@@ -4,12 +4,12 @@
         "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.example.edu_match.app-main-30:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.example.edu_match.app-merged_res-28:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.example.edu_match.app-main-30:\\mipmap-xxxhdpi\\ic_launcher.webp"
-    },
-    {
         "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.example.edu_match.app-merged_res-28:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.example.edu_match.app-main-30:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.example.edu_match.app-merged_res-28:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.example.edu_match.app-main-30:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
         "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.example.edu_match.app-merged_res-28:\\layout_activity_main.xml.flat",

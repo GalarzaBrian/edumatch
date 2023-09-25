@@ -1,4 +1,4 @@
-#Sun Sep 17 20:19:46 ART 2023
+#Mon Sep 25 17:29:52 CLST 2023
 base.0=D\:\\edumatch\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=D\:\\edumatch\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.2=D\:\\edumatch\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex

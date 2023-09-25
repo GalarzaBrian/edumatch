@@ -35,21 +35,22 @@
         android:id="@+id/textView2"
         android:layout_width="183dp"
         android:layout_height="44dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="60dp"
         android:text="¿No tienes cuenta?"
         android:textColor="#F6EEEE"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintHorizontal_bias="0.07"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button3" />
 
     <Button
         android:id="@+id/button6"
-        android:layout_width="169dp"
-        android:layout_height="47dp"
+        android:layout_width="150dp"
+        android:layout_height="53dp"
         android:layout_marginTop="48dp"
+        android:layout_marginEnd="16dp"
         android:backgroundTint="#2ABCED"
         android:text="Registrate"
         android:textColor="#011013"
@@ -57,8 +58,6 @@
         android:textSize="20sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/button3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
