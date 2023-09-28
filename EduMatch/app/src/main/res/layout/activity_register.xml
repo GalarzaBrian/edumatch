@@ -8,7 +8,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:paddingHorizontal="50dp"
-    android:paddingBottom="50dp"
+    android:paddingBottom="20dp"
     tools:context=".LoginActivity">
 
 
@@ -17,7 +17,7 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        android:paddingVertical="50dp"
+        android:paddingVertical="40dp"
         android:src="@drawable/carpincho" />
 
     <com.google.android.material.card.MaterialCardView
@@ -59,7 +59,8 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -72,7 +73,8 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -85,7 +87,8 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -98,7 +101,8 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -112,7 +116,7 @@
                 android:id="@+id/tvLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="¿Ta tienes una cuenta? Entrar" />
+                android:text="¿Ya tienes una cuenta? Entrar" />
 
 
         </LinearLayout>
