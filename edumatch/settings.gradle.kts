@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Edu-Match"
+rootProject.name = "EduMatch"
 include(":app")
  

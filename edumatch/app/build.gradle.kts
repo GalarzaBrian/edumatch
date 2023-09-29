@@ -3,12 +3,12 @@ plugins {
 }
 
 android {
-    namespace = "com.example.edu_match"
+    namespace = "com.example.edumatch"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.example.edu_match"
-        minSdk = 24
+        applicationId = "com.example.edumatch"
+        minSdk = 23
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
@@ -39,4 +39,5 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation("com.google.android.material:material:1.9.0")
 }

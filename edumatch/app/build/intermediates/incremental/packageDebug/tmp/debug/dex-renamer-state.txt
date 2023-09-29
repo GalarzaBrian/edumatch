@@ -1,10 +1,10 @@
-#Mon Sep 25 17:29:52 CLST 2023
-base.0=D\:\\edumatch\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=D\:\\edumatch\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.2=D\:\\edumatch\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
+#Fri Sep 29 00:54:40 ART 2023
+base.0=D\:\\edumatchgithub\\conociendoCordoba\\edumatch\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=D\:\\edumatchgithub\\conociendoCordoba\\edumatch\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.2=D\:\\edumatchgithub\\conociendoCordoba\\edumatch\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
 path.0=classes.dex
 path.1=0/classes.dex
-path.2=1/classes.dex
+path.2=14/classes.dex
 renamed.0=classes.dex
 renamed.1=classes2.dex
 renamed.2=classes3.dex

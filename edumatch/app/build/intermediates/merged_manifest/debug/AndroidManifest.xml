@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.edu_match"
+    package="com.example.edumatch"
     android:versionCode="1"
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="24"
+        android:minSdkVersion="23"
         android:targetSdkVersion="33" />
 
     <permission
-        android:name="com.example.edu_match.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:name="com.example.edumatch.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.example.edu_match.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+    <uses-permission android:name="com.example.edumatch.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
         android:allowBackup="true"
@@ -28,7 +28,10 @@
         android:testOnly="true"
         android:theme="@style/Theme.EduMatch" >
         <activity
-            android:name="com.example.edu_match.MainActivity"
+            android:name="com.example.edumatch.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.edumatch.SplashActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,10 +39,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.edumatch.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.edumatch.MainActivity"
+            android:exported="true" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.example.edu_match.androidx-startup"
+            android:authorities="com.example.edumatch.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"

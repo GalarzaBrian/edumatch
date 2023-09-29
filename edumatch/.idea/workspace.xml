@@ -9,25 +9,37 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ab303c9-31c2-490a-8af0-bbfa08fd05e0" name="Changes" comment="" />
+    <list default="true" id="b0cec4a1-32a8-4d25-9598-32f6034fefe1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/edumatch/SplashActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/edumatch/SplashActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[3cef1796]" />
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../edumatch\exportToHTML" />
+  </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2VQuUJic4HfGMWN2MWmhx73mWP2" />
+  <component name="ProjectId" id="2W3JVkGikuTbkQz0PwSIeSZoTIO" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -38,12 +50,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "D:/edumatch actualizaciones/1.0"
+    "last_opened_file_path": "D:/edumatchgithub/conociendoCordoba/edumatch"
   }
 }]]></component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
-      <module name="Edu-Match.app.main" />
+      <module name="EduMatch.app.main" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -112,11 +124,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7ab303c9-31c2-490a-8af0-bbfa08fd05e0" name="Changes" comment="" />
-      <created>1694780640029</created>
+      <changelist id="b0cec4a1-32a8-4d25-9598-32f6034fefe1" name="Changes" comment="" />
+      <created>1695955355229</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1694780640029</updated>
+      <updated>1695955355229</updated>
     </task>
     <servers />
   </component>
