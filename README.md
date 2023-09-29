@@ -1,17 +1,21 @@
 # Edu-Match
 
-Este repositorio estará dedicado a la gestión del nuevo proyecto del módulo "Programador de aplicaciones móviles", perteneciente al Instituto Superior Politécnico Córdoba. 
+> Este repositorio estará dedicado a la gestión del nuevo proyecto del módulo "Programador de aplicaciones móviles", perteneciente al Instituto Superior Politécnico Córdoba.
+>
 
-## Integrantes:
+<br>
+<br>
+<img src= src/logo.svg height= 450px>
 
-* Paula Cabrera 
+## Integrantes
+
+* Paula Cabrera
 * Daniel Vargas
 * Belen Riquelme
 * Roberto Carlos Osores
-* Gonzalez Matias Nicolas
+* [Gonzalez Matias Nicolas](https://github.com/MatiasGonzalez1)
 * Gutierrez Emma
 * David Spuler
 * Brian ivan galarza
-* Mario Nicolás Ruiz 
+* Mario Nicolás Ruiz
 * Stefania Jeannette Jara Racca
-
