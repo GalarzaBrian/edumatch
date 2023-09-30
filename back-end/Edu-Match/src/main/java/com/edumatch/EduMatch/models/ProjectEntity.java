@@ -1,4 +1,4 @@
-package com.edumatch.EduMatch.Models;
+package com.edumatch.EduMatch.models;
 
 import jakarta.persistence.*;
 import lombok.*;

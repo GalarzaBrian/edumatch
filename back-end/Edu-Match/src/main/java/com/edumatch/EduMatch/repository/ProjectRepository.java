@@ -1,6 +1,6 @@
-package com.edumatch.EduMatch.Repository;
+package com.edumatch.EduMatch.repository;
 
-import com.edumatch.EduMatch.Models.ProjectEntity;
+import com.edumatch.EduMatch.models.ProjectEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

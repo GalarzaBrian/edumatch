@@ -1,11 +1,9 @@
-package com.edumatch.EduMatch.Models;
+package com.edumatch.EduMatch.models;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.antlr.v4.runtime.misc.NotNull;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
-import org.springframework.data.annotation.Id;
 
 import java.time.OffsetDateTime;
 
