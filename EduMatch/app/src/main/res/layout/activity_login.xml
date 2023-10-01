@@ -86,13 +86,18 @@
                 android:id="@+id/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="#673AB7"
                 android:text="Button" />
 
             <TextView
                 android:id="@+id/tvRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="¿No tienes una cuenta? Registrate" />
+                android:layout_marginTop="10dp"
+                android:text="¿No tienes una cuenta? Registrate"
+                android:textAlignment="center"
+                android:textColorHint="#FFFFFF"
+                android:textColorLink="#FFFFFF" />
 
 
         </LinearLayout>

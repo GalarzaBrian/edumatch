@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/seed"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingHorizontal="50dp"
+    android:paddingBottom="50dp"
+    tools:context=".ProjectCreateActivity">
+
+    <com.google.android.material.card.MaterialCardView
+
+        android:id="@+id/fondo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/seed"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="@color/seed"
+        app:cardElevation="0dp"
+        app:strokeColor="#03A9F4">
+
+        <LinearLayout
+            android:id="@+id/contenedor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:baselineAligned="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
+                android:text="@string/titulo"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
+
+            <EditText
+                android:id="@+id/nombre_projecto"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:hint="Nombre del Proyecto"
+                android:background="#E1DFDF"
+                android:ems="10"
+                android:inputType="text"
+                android:textColor="#4A4545"
+                android:textColorHint="#434343"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                tools:ignore="LabelFor" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/descripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="124dp"
+                    android:background="#E1DFDF"
+                    android:text="@string/descripcion"
+                    android:textSize="12sp"
+                    android:textStyle="normal"
+                    android:textAlignment="textStart"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="10dp"
+                android:background="#E1DFDF"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="textEmailAddress"
+                android:hint="Correo de Contacto"
+                android:textColor="#FF4A4545"
+                android:textColorHint="#424141"
+                android:textSize="12sp"
+                tools:ignore="LabelFor" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="66dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_cancelar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#E1DFDF"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/btn_cancelar"
+                    android:textColor="#070707"
+                    android:textColorHint="#151515"
+                    tools:ignore="ButtonStyle" />
+
+                <Button
+                    android:id="@+id/btn_publicar"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#E26D22CF"
+                    android:text="@string/btn_publicar"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

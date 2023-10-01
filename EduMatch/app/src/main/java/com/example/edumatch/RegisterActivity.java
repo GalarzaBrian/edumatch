@@ -37,6 +37,10 @@ public class RegisterActivity extends AppCompatActivity {
                 // Acción al hacer clic en el enlace (abrir el navegador)
                 //Uri uri = Uri.parse("http://www.ejemplo.com");
                 //Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+
+                // Prueba Ingreso a Creacion de Proyecto
+                // Intent intent = new Intent(RegisterActivity.this, ProjectCreateActivity.class);
+
                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
 
                 startActivity(intent);
