@@ -20,10 +20,11 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="260dp"
+            android:layout_width="match_parent"
             android:layout_height="234dp"
-            android:layout_marginLeft="40dp"
-            app:srcCompat="@drawable/carpincho" />
+            app:srcCompat="@drawable/carpincho"
+            tools:ignore="ImageContrastCheck"
+            android:importantForAccessibility="no" />
 
         <SearchView
             android:id="@+id/SearchView"
@@ -36,11 +37,11 @@
 
         <Button
             android:id="@+id/button_registrar_proyecto"
-            android:layout_width="311dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="30dp"
             android:backgroundTint="#E26D22CF"
-            android:text="Registrar proyecto" />
+            android:text="@string/btn_proyecto" />
 
     </LinearLayout>
 
