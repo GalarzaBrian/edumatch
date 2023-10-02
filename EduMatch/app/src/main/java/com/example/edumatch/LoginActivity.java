@@ -9,6 +9,7 @@ import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity {
@@ -19,6 +20,8 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         TextView textView = findViewById(R.id.tvRegister);
+        Button button = findViewById(R.id.button);
+
 
         // Obtén el texto del TextView
         String texto = textView.getText().toString();
@@ -42,6 +45,18 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         };
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // Abrir la actividad HomePageActivity
+                Intent intent = new Intent(LoginActivity.this, HomePageActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
 
         // Aplica el ClickableSpan al texto enlazado
         spannableString.setSpan(clickableSpan, inicioEnlace, finEnlace, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
