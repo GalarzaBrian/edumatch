@@ -1,10 +1,10 @@
 package com.example.edumatch;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
+import android.view.View;
+import android.widget.Button;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -13,13 +13,27 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        new Handler().postDelayed(new Runnable() {
+        Button loginButton = findViewById(R.id.button3);
+        Button registerButton = findViewById(R.id.button6);
+
+
+        loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void run() {
-                Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
-                startActivity(intent);
-                finish();
+            public void onClick(View v) {
+                // Iniciar LoginActivity al hacer clic en "Iniciar sesión"
+                Intent loginIntent = new Intent(SplashActivity.this, LoginActivity.class);
+                startActivity(loginIntent);
             }
-        },2000);
+        });
+
+
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent registerIntent = new Intent(SplashActivity.this, RegisterActivity.class);
+                startActivity(registerIntent);
+            }
+        });
     }
 }
