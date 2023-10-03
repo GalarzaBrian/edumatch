@@ -43,6 +43,12 @@
             android:backgroundTint="#E26D22CF"
             android:text="@string/btn_proyecto" />
 
+        <Button
+            android:id="@+id/btnContacto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contacto" />
+
     </LinearLayout>
 
 
