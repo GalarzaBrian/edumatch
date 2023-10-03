@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">EduMatch</string>
+
+    <!-- Variables Pantalla project-create-->
+    <string name="titulo">Publica tu Proyecto</string>
+
+    <string name="nombre_project">Nombre del Proyecto</string>
+    <string name="descripcion">Descripcion</string>
+    <string name="email">Mail de Contacto</string>
+
+    <string name="btn_cancelar">Cancelar</string>
+    <string name="btn_publicar">Publicar</string>
+    <!-- end project-create -->
+
+    <!-- Variables Pantalla HomePage-->
+    <string name="btn_proyecto">Registrar Proyecto</string>
+    <!-- end HomePage-->
+</resources>
