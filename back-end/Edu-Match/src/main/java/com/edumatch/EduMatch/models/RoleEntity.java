@@ -1,10 +1,10 @@
 package com.edumatch.EduMatch.models;
 
-import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
+import javax.persistence.*;
 import java.time.OffsetDateTime;
 
 @Entity
@@ -20,12 +20,11 @@ public class RoleEntity {
 
     private static final long serialVersionUID = 1L;
 
-    @jakarta.persistence.Id
-    @Column(name = "id", nullable = false)
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NonNull
+  //      @NonNull
     private String name;
 
     private String description;

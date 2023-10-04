@@ -1,9 +1,10 @@
 package com.edumatch.EduMatch.models;
 
-import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
+
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -15,9 +16,11 @@ import org.hibernate.annotations.Where;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProjectEntity extends AuditableEntity{
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @NonNull
     private String name;
 

@@ -1,11 +1,14 @@
 package com.edumatch.EduMatch.models;
 
-import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
 import java.util.Collection;
+
 
 @Getter
 @Setter
@@ -21,24 +24,23 @@ public class UserEntity extends AuditableEntity {
 
     private static final long serialVersionUID = 1L;
 
-    @jakarta.persistence.Id
-    @Column(name = "id", nullable = false)
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NonNull
+    @NotNull
     private String firstName;
 
-    @NonNull
+    @NotNull
     private String lastName;
 
-    @NonNull
+    @NotNull
     private String email;
 
-    @NonNull
+    @NotNull
     private String password;
 
-    @NonNull
+    @NotNull
     private String photo;
 
     @ManyToMany
