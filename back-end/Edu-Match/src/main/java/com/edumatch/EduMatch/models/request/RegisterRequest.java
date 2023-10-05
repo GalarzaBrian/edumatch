@@ -24,6 +24,9 @@ public class RegisterRequest {
     @NotEmpty
     private String password;
 
+    @NotEmpty
+    private OffsetDateTime birthday;
+
     private String photo;
 
     @NotNull

@@ -24,7 +24,7 @@ public class RoleEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-  //      @NonNull
+    @NonNull
     private String name;
 
     private String description;

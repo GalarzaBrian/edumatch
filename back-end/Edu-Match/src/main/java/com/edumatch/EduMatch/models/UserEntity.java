@@ -25,20 +25,26 @@ public class UserEntity extends AuditableEntity {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "numero_documento")
     private Long id;
 
     @NotNull
+    @Column(name = "nombre")
     private String firstName;
 
     @NotNull
     private String lastName;
 
     @NotNull
+    @Column(name = "correo")
     private String email;
 
     @NotNull
+    @Column(name = "contrasena")
     private String password;
+
+    @Column(name = "fecha_nacimiento")
+    private OffsetDateTime birthday;
 
     @NotNull
     private String photo;

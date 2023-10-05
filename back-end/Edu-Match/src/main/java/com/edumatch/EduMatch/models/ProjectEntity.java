@@ -22,7 +22,24 @@ public class ProjectEntity extends AuditableEntity{
     private Long id;
 
     @NonNull
+    @Column(name = "nombre")
     private String name;
 
+    @NonNull
+    @Column(name = "descripcion")
+    private String description;
+
+    @Column(name = "area_estudio")
+    private String studyArea;
+
+    @Column(name = "requerimientos")
+    private String requirements;
+
+    @NonNull
+    @Column(name = "fecha_finalizacion")
+    private OffsetDateTime endDate;
+
+    @NonNull
+    private Boolean isActive;
 
 }
