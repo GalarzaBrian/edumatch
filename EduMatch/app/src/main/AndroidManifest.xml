@@ -13,7 +13,14 @@
         android:theme="@style/Theme.EduMatch"
         tools:targetApi="31">
         <activity
+            android:name=".UserProfile"
+            android:exported="true"
+            android:parentActivityName=".HomePageActivity"/>
+        <activity
             android:name=".ProjectCreateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ContactoActivity"
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"
@@ -37,6 +44,5 @@
             android:name=".HomePageActivity"
             android:exported="false" />
     </application>
-
 
 </manifest>
