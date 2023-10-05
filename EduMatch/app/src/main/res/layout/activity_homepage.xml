@@ -47,7 +47,15 @@
             android:id="@+id/btnContacto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#E26D22CF"
             android:text="Contacto" />
+
+        <Button
+            android:id="@+id/button_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#E26D22CF"
+            android:text="Mi Perfil" />
 
     </LinearLayout>
 

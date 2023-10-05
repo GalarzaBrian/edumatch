@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class HomePageActivity extends AppCompatActivity {
 
     Button btnContacto;
+    Button btnProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +20,7 @@ public class HomePageActivity extends AppCompatActivity {
 
         //Declaramos el boton Contacto que nos enviara a dicha activity
         btnContacto = findViewById(R.id.btnContacto);
+        btnProfile = findViewById(R.id.button_profile);
         Button btn_proyecto = (Button) findViewById(R.id.button_registrar_proyecto);
 
 
@@ -29,6 +31,15 @@ public class HomePageActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btnProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomePageActivity.this, UserProfile.class);
+                startActivity(intent);
+            }
+        });
+
         btn_proyecto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

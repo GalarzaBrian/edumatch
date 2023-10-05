@@ -17,8 +17,8 @@
         app:cardBackgroundColor="@color/seed">
 
         <LinearLayout
-            android:layout_width="454dp"
-            android:layout_height="match_parent"
+            android:layout_width="305dp"
+            android:layout_height="651dp"
             android:layout_gravity="center_horizontal"
             android:baselineAligned="false"
             android:gravity="center"
@@ -26,7 +26,7 @@
 
             <ImageView
                 android:layout_width="268dp"
-                android:layout_height="194dp"
+                android:layout_height="139dp"
                 android:contentDescription="imagen"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/carpincho" />
@@ -39,13 +39,13 @@
                 android:text="Contacto"
                 android:textAlignment="center"
                 android:textColor="@android:color/white"
-                android:textSize="50dp"
+                android:textSize="30dp"
                 android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="30dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="10dp"
                 app:boxBackgroundColor="@color/md_theme_dark_inverseSurface">
 
@@ -53,19 +53,19 @@
                     android:id="@+id/etEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="5dp"
                     android:ems="10"
                     android:hint="Ingrese su correo electrónico"
                     android:inputType="textEmailAddress"
-                    android:textColor="@android:color/white"
-                    android:textColorHint="@android:color/white"
+                    android:textColor="@android:color/widget_edittext_dark"
+                    android:textColorHint="@android:color/widget_edittext_dark"
                     android:textStyle="bold" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="10dp"
+                android:layout_height="86dp"
+                android:layout_marginBottom="5dp"
                 app:boxBackgroundColor="@color/md_theme_dark_inverseSurface">
 
                 <EditText
@@ -75,28 +75,30 @@
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
                     android:ems="10"
+                    android:hint="Asunto"
                     android:inputType="text"
-                    android:text="Asunto"
+                    android:textColor="@android:color/widget_edittext_dark"
                     android:textStyle="bold" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="10dp"
+                android:layout_height="130dp"
                 app:boxBackgroundColor="@color/md_theme_dark_inverseSurface">
 
                 <EditText
                     android:id="@+id/etMensajes"
                     android:layout_width="match_parent"
-                    android:layout_height="228dp"
+                    android:layout_height="154dp"
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
                     android:ems="10"
                     android:gravity="start|top"
+                    android:hint="Ingrese su mensaje"
                     android:inputType="textMultiLine"
-                    android:shadowColor="@color/md_theme_dark_inverseSurface"
-                    android:text="Mensaje"
+                    android:shadowColor="@color/md_theme_dark_background"
+                    android:textColor="@android:color/widget_edittext_dark"
+                    android:textColorHint="@color/md_theme_dark_background"
                     android:textStyle="bold" />
             </com.google.android.material.textfield.TextInputLayout>
 
