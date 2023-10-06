@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/seed"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingHorizontal="40dp"
+    android:paddingBottom="100dp"
+    tools:context=".LoginActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="-80dp"
+        android:padding="5dp"
+        android:background="@drawable/border"
+        android:elevation="@dimen/cardview_compat_inset_shadow"
+        android:src="@drawable/carpincho"
+        android:contentDescription="Imagen de muestra" />
+
+
+
+    <com.google.android.material.card.MaterialCardView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/seed"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginBottom="50dp"
+        app:cardBackgroundColor="@color/seed"
+        app:cardElevation="0dp"
+        app:strokeColor="@color/md_theme_light_onPrimary"
+        app:strokeWidth="5dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingHorizontal="40dp"
+            android:paddingTop="20dp">
+
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:paddingVertical="10dp"
+                android:text="@string/titulo"
+                android:textAlignment="center"
+                android:textColor="@color/md_theme_light_onPrimary"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+
+            <View
+                android:id="@+id/descripcion"
+                android:layout_width="298dp"
+                android:layout_height="283dp"
+                android:layout_marginStart="-26dp">
+
+            </View>
+
+
+            <TextView
+                android:id="@+id/proyecto_ed"
+                android:layout_width="215dp"
+                android:layout_height="26dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="-280dp"
+                android:gravity="center_horizontal|top"
+                android:text="@string/proyecto_ed"
+                android:textColor="#fff"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/app_m_vil_q"
+                android:layout_width="246dp"
+                android:layout_height="80dp"
+                android:gravity="center_horizontal|top"
+                android:text="@string/resenia_ed"
+                android:textColor="#fff"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/participant"
+                android:layout_width="117dp"
+                android:layout_height="65dp"
+                android:gravity="center_horizontal|top"
+                android:text="@string/participant"
+                android:textColor="#fff"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/participant4"
+                android:layout_width="117dp"
+                android:layout_height="65dp"
+                android:gravity="center_horizontal|top"
+                android:text="@string/participant"
+                android:textColor="#fff"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="@string/aplicar_button"
+        android:textColor="#47ACE5"
+        android:layout_marginTop="-30dp"
+        android:layout_marginBottom="20dp"
+        />
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
