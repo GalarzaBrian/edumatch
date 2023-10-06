@@ -56,57 +56,37 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="80dp"
                 android:paddingVertical="10dp"
-                android:text="@string/titulo"
+                android:text="@string/pp_titulo_principal"
                 android:textAlignment="center"
                 android:textColor="@color/md_theme_light_onPrimary"
                 android:textSize="15sp"
                 android:textStyle="bold" />
-
-
-            <View
-                android:id="@+id/descripcion"
-                android:layout_width="298dp"
-                android:layout_height="283dp"
-                android:layout_marginStart="-26dp">
-
-            </View>
-
-
-            <TextView
-                android:id="@+id/proyecto_ed"
-                android:layout_width="215dp"
-                android:layout_height="26dp"
-                android:layout_marginStart="18dp"
-                android:layout_marginTop="-280dp"
-                android:gravity="center_horizontal|top"
-                android:text="@string/proyecto_ed"
-                android:textColor="#fff"
-                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/app_m_vil_q"
                 android:layout_width="246dp"
                 android:layout_height="80dp"
                 android:gravity="center_horizontal|top"
-                android:text="@string/resenia_ed"
+                android:text="@string/pp_resenia_ed"
                 android:textColor="#fff"
                 android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/participant"
                 android:layout_width="117dp"
-                android:layout_height="65dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:gravity="center_horizontal|top"
-                android:text="@string/participant"
+                android:text="@string/pp_participant"
                 android:textColor="#fff"
                 android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/participant4"
-                android:layout_width="117dp"
-                android:layout_height="65dp"
+                android:layout_width="116dp"
+                android:layout_height="wrap_content"
                 android:gravity="center_horizontal|top"
-                android:text="@string/participant"
+                android:text="@string/pp_participant"
                 android:textColor="#fff"
                 android:textSize="15sp" />
 
@@ -118,8 +98,8 @@
         android:id="@+id/button4"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:text="@string/aplicar_button"
-        android:textColor="#47ACE5"
+        android:text="@string/pp_aplicar_button"
+        android:textColor="#fff"
         android:layout_marginTop="-30dp"
         android:layout_marginBottom="20dp"
         />
