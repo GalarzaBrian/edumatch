@@ -7,6 +7,7 @@ import org.hibernate.annotations.Where;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+import java.time.OffsetDateTime;
 import java.util.Collection;
 
 
@@ -58,4 +59,14 @@ public class UserEntity extends AuditableEntity {
                     name = "role_id", referencedColumnName = "id")
     )
     private Collection<RoleEntity> roles;
+
+    @ManyToMany
+    @JoinTable(
+            name = "user_project",
+            joinColumns = @JoinColumn(
+                    name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(
+                    name = "project_id", referencedColumnName = "id")
+    )
+    private Collection<ProjectEntity> projects;
 }
