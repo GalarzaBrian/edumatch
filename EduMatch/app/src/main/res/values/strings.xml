@@ -15,4 +15,12 @@
     <!-- Variables Pantalla HomePage-->
     <string name="btn_proyecto">Registrar Proyecto</string>
     <!-- end HomePage-->
+
+    <!-- Variables Pantalla Project_page-->
+    <string name="pp_titulo_principal">Proyecto Edu Match:</string>
+    <string name="pp_titulo">Nombre del Proyecto</string>
+    <string name="pp_resenia_ed">App movil que utiliza android studio como tecnologia y java como lenguaje principal.</string>
+    <string name="pp_participant">Participantes:\n\n6</string>
+    <string name="pp_aplicar_button">Aplicar</string>
+    <!-- end HomePage-->
 </resources>
