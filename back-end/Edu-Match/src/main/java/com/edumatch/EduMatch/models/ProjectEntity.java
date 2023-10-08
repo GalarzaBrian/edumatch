@@ -41,6 +41,6 @@ public class ProjectEntity extends AuditableEntity{
     private OffsetDateTime endDate;
 
     @NonNull
-    private Boolean isActive=true;
+    private Boolean isActive;
 
 }

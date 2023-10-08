@@ -33,7 +33,8 @@ public class ProjectCreateActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ventanaMensaje();
-
+                Intent intent = new Intent(ProjectCreateActivity.this, ProjectsActivity.class);
+                startActivity(intent);
 
             }
         });
