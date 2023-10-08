@@ -26,6 +26,9 @@
             android:name=".ProjectCreateActivity"
             android:exported="false" />
         <activity
+            android:name=".ProjectPageActivity"
+            android:exported="false" />
+        <activity
             android:name=".ContactoActivity"
             android:exported="false" />
         <activity
