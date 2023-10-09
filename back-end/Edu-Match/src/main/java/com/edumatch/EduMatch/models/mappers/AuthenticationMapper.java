@@ -15,19 +15,15 @@ public class AuthenticationMapper {
 
     public UserEntity registerRequestDTO2Entity(RegisterRequest userDto) {
         UserEntity newUser = new UserEntity();
-        newUser.setFirstName(userDto.getFirstName());
-        newUser.setLastName(userDto.getLastName());
+        newUser.setDni(userDto.getDni());
         newUser.setPassword(userDto.getPassword());
         newUser.setEmail(userDto.getEmail());
-        newUser.setPhoto(userDto.getPhoto());
         newUser.setRoles(List.of(RoleEntity.builder().id(userDto.getRoleId()).build()));
         return newUser;
     }
 
     public RegisterResponse entity2RegisterResponseDTO(UserEntity userEntity, String jwt) {
         return RegisterResponse.builder()
-                .firstName(userEntity.getFirstName())
-                .lastName(userEntity.getLastName())
                 .email(userEntity.getEmail())
                 .jwt(jwt)
                 .build();

@@ -36,9 +36,9 @@ public class UserAuthServiceImpl implements UserAuthService {
 
     @Override
     public AuthenticationResponse loginAttempt(AuthenticationRequest authenticationRequest) {
-        UserDetails userDetails = userDetailsCustomService.loadUserByUsername(authenticationRequest.getUsername());
+        UserDetails userDetails = userDetailsCustomService.loadUserByUsername(authenticationRequest.getEmail());
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
-                authenticationRequest.getUsername(),
+                authenticationRequest.getEmail(),
                 authenticationRequest.getPassword(),
                 userDetails.getAuthorities()
         );

@@ -36,7 +36,6 @@ public class ProjectEntity extends AuditableEntity{
     @Column(name = "requerimientos")
     private String requirements;
 
-    @NonNull
     @Column(name = "fecha_finalizacion")
     private OffsetDateTime endDate;
 

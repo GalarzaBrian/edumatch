@@ -55,5 +55,8 @@ public class RegisterActivity extends AppCompatActivity {
 
         // Habilita el movimiento del enlace (clickeable)
         textView.setMovementMethod(LinkMovementMethod.getInstance());
+
     }
+
+
 }

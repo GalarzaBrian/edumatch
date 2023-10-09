@@ -9,6 +9,7 @@ import javax.validation.constraints.NotNull;
 
 import java.time.OffsetDateTime;
 import java.util.Collection;
+import java.util.List;
 
 
 @Getter
@@ -30,12 +31,14 @@ public class UserEntity extends AuditableEntity {
     @Column(name = "id")
     private Long id;
 
-    @NotNull
-    @Column(name = "nombre")
-    private String firstName;
+    @Column(name = "dni")
+    private Long dni;
 
-    @NotNull
-    private String lastName;
+    @Column(name = "nombre")
+    private String firstName="Usuario";
+
+    @Column(name = "apellido")
+    private String lastName="Anonimo";
 
     @NotNull
     @Column(name = "correo")
@@ -48,8 +51,8 @@ public class UserEntity extends AuditableEntity {
     @Column(name = "fecha_nacimiento")
     private OffsetDateTime birthday;
 
-    @NotNull
-    private String photo;
+    @Column(name = "fotoPerfil")
+    private String photo="";
 
     @ManyToMany
     @JoinTable(
@@ -69,5 +72,5 @@ public class UserEntity extends AuditableEntity {
             inverseJoinColumns = @JoinColumn(
                     name = "project_id", referencedColumnName = "id")
     )
-    private Collection<ProjectEntity> projects;
+    private List<ProjectEntity> projects;
 }

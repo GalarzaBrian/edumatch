@@ -3,20 +3,14 @@ package com.edumatch.EduMatch.models.response;
 import lombok.Builder;
 import lombok.Data;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
-
 @Builder
 @Data
 public class RegisterResponse {
 
-    @NotEmpty
-    private String firstName;
+//    private String firstName;
+//
+//    private String lastName;
 
-    @NotEmpty
-    private String lastName;
-
-    @Email
     private String email;
 
     private String jwt;

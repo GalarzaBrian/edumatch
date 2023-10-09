@@ -28,24 +28,19 @@ public class UserDetailsCustomService implements UserDetailsService {
     private final UserRepository userRepository;
     private final AuthenticationMapper userMapper;
     private final PasswordEncoder passwordEncoder;
-//    private final EmailService emailService;
     private final JwtUtil jwtTokenUtil;
 
-//    @Value("${sendgrid.welcome-template}")
-//    private String emailTemplateId;
 
     @Autowired
     public UserDetailsCustomService(
             @Lazy AuthenticationMapper userMapper,
             @Lazy UserRepository userRepository,
             @Lazy PasswordEncoder passwordEncoder,
-            //@Lazy EmailService emailService,
             @Lazy JwtUtil jwtTokenUtil
     ) {
         this.userMapper = userMapper;
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
-       // this.emailService = emailService;
         this.jwtTokenUtil = jwtTokenUtil;
 
     }
@@ -64,10 +59,6 @@ public class UserDetailsCustomService implements UserDetailsService {
                 newUser.getPassword(),
                 List.of()
         );
-
-        //SendGrid Email:
-        String fullName = newUser.getFirstName() + " " + newUser.getLastName();
-        //emailService.sendWithTemplate(newUser.getEmail(), fullName, emailTemplateId);
 
         String jwt = jwtTokenUtil.generateToken(newUserDetail);
         return userMapper.entity2RegisterResponseDTO(newUser, jwt);

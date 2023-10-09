@@ -5,19 +5,19 @@ import lombok.Data;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import java.time.OffsetDateTime;
 
 
 @Data
 @Builder
 public class RegisterRequest {
 
-    @NotEmpty
-    private String firstName;
+//    @NotEmpty
+//    private String firstName;
+//
+//    @NotEmpty
+//    private String lastName;
 
-    @NotEmpty
-    private String lastName;
+    private Long dni;
 
     @Email
     private String email;
@@ -25,10 +25,10 @@ public class RegisterRequest {
     @NotEmpty
     private String password;
 
-    private OffsetDateTime birthday;
+//    private OffsetDateTime birthday;
+//
+//    private String photo;
 
-    private String photo;
-
-    @NotNull
+//    @NotNull
     private Long roleId;
 }

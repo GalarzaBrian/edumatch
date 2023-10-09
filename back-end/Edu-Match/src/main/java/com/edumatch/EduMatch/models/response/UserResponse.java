@@ -29,6 +29,8 @@ public class UserResponse {
 
     private List<RoleDTO> roles;
 
+    private List<ProjectResponse> projects;
+
     public static UserResponse toDTO(UserEntity entity) {
         if (entity == null) return null;
 
@@ -39,6 +41,7 @@ public class UserResponse {
                 .email(entity.getEmail())
                 .photo(entity.getPhoto())
                 .roles(roleMapper.entity2DTO(entity.getRoles()))
+                .projects(ProjectResponse.listToDTO(entity.getProjects()))
                 .build();
 
     }
@@ -56,7 +59,7 @@ public class UserResponse {
             obj.setEmail(temp.getEmail());
             obj.setPhoto(temp.getPhoto());
             obj.setRoles(roleMapper.entity2DTO(temp.getRoles()));
-
+            obj.setProjects(ProjectResponse.listToDTO(temp.getProjects()));
             result.add(obj);
         }
 
