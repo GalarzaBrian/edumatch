@@ -22,11 +22,9 @@ public class ProjectEntity extends AuditableEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NonNull
     @Column(name = "nombre")
     private String name;
 
-    @NonNull
     @Column(name = "descripcion")
     private String description;
 
@@ -39,7 +37,6 @@ public class ProjectEntity extends AuditableEntity{
     @Column(name = "fecha_finalizacion")
     private OffsetDateTime endDate;
 
-    @NonNull
     private Boolean isActive;
 
 }

@@ -11,12 +11,6 @@ import javax.validation.constraints.NotEmpty;
 @Builder
 public class RegisterRequest {
 
-//    @NotEmpty
-//    private String firstName;
-//
-//    @NotEmpty
-//    private String lastName;
-
     private Long dni;
 
     @Email
@@ -25,10 +19,5 @@ public class RegisterRequest {
     @NotEmpty
     private String password;
 
-//    private OffsetDateTime birthday;
-//
-//    private String photo;
-
-//    @NotNull
     private Long roleId;
 }

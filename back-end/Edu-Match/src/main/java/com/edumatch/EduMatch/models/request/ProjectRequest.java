@@ -1,12 +1,9 @@
 package com.edumatch.EduMatch.models.request;
 
 import com.edumatch.EduMatch.models.ProjectEntity;
-import com.edumatch.EduMatch.models.RoleEntity;
-import com.edumatch.EduMatch.models.UserEntity;
 import lombok.*;
 
 import java.time.OffsetDateTime;
-import java.util.List;
 
 @RequiredArgsConstructor
 @AllArgsConstructor
@@ -25,6 +22,10 @@ public class ProjectRequest {
 
     private OffsetDateTime endDate;
 
+    public boolean getIsActive() {
+        return isActive;
+    }
+
     private boolean isActive;
 
 
@@ -32,7 +33,7 @@ public class ProjectRequest {
         foundProject.setName(request.getName());
         foundProject.setDescription(request.getDescription());
         foundProject.setRequirements(request.getRequirements());
-        foundProject.setIsActive(request.isActive());
+        foundProject.setIsActive(request.getIsActive());
         foundProject.setStudyArea(request.getStudyArea());
 
         return foundProject;

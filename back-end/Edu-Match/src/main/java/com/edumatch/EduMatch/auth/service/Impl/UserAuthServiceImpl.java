@@ -8,6 +8,7 @@ import com.edumatch.EduMatch.models.mappers.AuthenticationMapper;
 import com.edumatch.EduMatch.models.mappers.RoleMapper;
 import com.edumatch.EduMatch.models.request.AuthenticationRequest;
 import com.edumatch.EduMatch.models.response.AuthenticationResponse;
+import com.edumatch.EduMatch.models.response.ProjectResponse;
 import com.edumatch.EduMatch.models.response.UserResponse;
 import com.edumatch.EduMatch.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -60,6 +61,7 @@ public class UserAuthServiceImpl implements UserAuthService {
                 .email(user.get().getEmail())
                 .photo(user.get().getPhoto())
                 .roles(roleMapper.entity2DTO(user.get().getRoles()))
+                .projects(ProjectResponse.listToDTO(user.get().getProjects()))
                 .build();
     }
 

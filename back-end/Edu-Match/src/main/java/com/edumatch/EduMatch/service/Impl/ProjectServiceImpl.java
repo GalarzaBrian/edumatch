@@ -29,6 +29,19 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
+    public ProjectEntity saveProject(ProjectRequest request) {
+        ProjectEntity newProject =  ProjectEntity.builder()
+                .name(request.getName())
+                .description(request.getDescription())
+                .studyArea(request.getStudyArea())
+                .requirements(request.getRequirements())
+                .endDate(request.getEndDate())
+                .isActive(request.getIsActive())
+                .build();
+        return projectRepository.save(newProject);
+    }
+
+    @Override
     public void updateProject(ProjectRequest request, Long id) {
         ProjectEntity foundProject = projectRepository.findById(id).orElseThrow();
 
