@@ -62,6 +62,7 @@
                 app:boxStrokeColor="#5E35B1">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/EtfDni"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
@@ -79,6 +80,7 @@
                 app:boxStrokeColor="#5E35B1">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/EtfCorreo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
@@ -87,7 +89,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfContraseña"
+                android:id="@+id/tfPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Contraseña"
@@ -96,6 +98,7 @@
                 app:boxStrokeColor="#5E35B1">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/EtfPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
@@ -113,6 +116,7 @@
                 app:boxStrokeColor="#5E35B1">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/EtfRepetirContraseña"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
@@ -121,7 +125,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/RegisterButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#673AB7"

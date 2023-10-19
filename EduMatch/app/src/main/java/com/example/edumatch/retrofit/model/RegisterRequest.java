@@ -8,27 +8,24 @@ package com.example.edumatch.retrofit.model;
 //         "photo":"lafoto"
 public class RegisterRequest {
 
-    private String firstName;
-    private String lastName;
+    public Long getDni() {
+        return dni;
+    }
+
+    public void setDni(Long dni) {
+        this.dni = dni;
+    }
+
+    private Long dni;
     private String email;
     private String password;
-    private String photo;
-    private int roleId;
+     private Long roleId;
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public RegisterRequest(Long dni, String email, String password, Long roleId) {
+        this.dni = dni;
+        this.email = email;
+        this.password = password;
+        this.roleId = roleId;
     }
 
     public String getEmail() {
@@ -47,19 +44,11 @@ public class RegisterRequest {
         this.password = password;
     }
 
-    public String getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(String photo) {
-        this.photo = photo;
-    }
-
-    public int getRoleId() {
+    public Long getRoleId() {
         return roleId;
     }
 
-    public void setRoleId(int roleId) {
+    public void setRoleId(Long roleId) {
         this.roleId = roleId;
     }
 }
