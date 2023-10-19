@@ -1,6 +1,7 @@
 package com.edumatch.EduMatch.models.response;
 
 import com.edumatch.EduMatch.models.ProjectEntity;
+import com.edumatch.EduMatch.models.UserEntity;
 import lombok.*;
 
 import java.time.OffsetDateTime;
@@ -13,6 +14,9 @@ import java.util.List;
 @Setter
 @Builder
 public class ProjectResponse {
+
+    private Long id;
+
     private String name;
 
     private String description;
@@ -25,15 +29,19 @@ public class ProjectResponse {
 
     private boolean isActive;
 
+    private List<UserEntity> users;
+
     public static ProjectResponse toDTO(ProjectEntity entity){
         if (entity == null) return null;
 
         return ProjectResponse.builder()
+                .id(entity.getId())
                 .name(entity.getName())
                 .requirements(entity.getRequirements())
                 .endDate(entity.getEndDate())
                 .studyArea(entity.getStudyArea())
                 .description(entity.getDescription())
+                .users(List.of(UserEntity.builder().id(entity.getId()).build()))
                 .build();
     }
 

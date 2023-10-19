@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "dni": 12345678,
+      "email": "admin@email.com",
+      "password": "password",
+      "roleId": 1
+    },
+    {
+      "id": 2,
+      "dni": 23456789,
+      "email": "admin1@email.com",
+      "password": "password",
+      "roleId": 1
+    }
+  ]
+}

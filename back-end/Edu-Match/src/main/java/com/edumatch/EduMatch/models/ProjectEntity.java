@@ -1,11 +1,13 @@
 package com.edumatch.EduMatch.models;
 
+import com.edumatch.EduMatch.models.response.UserResponse;
 import lombok.*;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.time.OffsetDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -38,5 +40,8 @@ public class ProjectEntity extends AuditableEntity{
     private OffsetDateTime endDate;
 
     private Boolean isActive;
+
+    @ManyToMany(mappedBy = "projects")
+    private List<UserEntity> users;
 
 }
