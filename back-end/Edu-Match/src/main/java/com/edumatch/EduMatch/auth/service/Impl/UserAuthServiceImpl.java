@@ -1,0 +1,69 @@
+package com.edumatch.EduMatch.auth.service.Impl;
+
+import com.edumatch.EduMatch.auth.service.JwtUtil;
+import com.edumatch.EduMatch.auth.service.UserAuthService;
+import com.edumatch.EduMatch.auth.service.UserDetailsCustomService;
+import com.edumatch.EduMatch.models.UserEntity;
+import com.edumatch.EduMatch.models.mappers.AuthenticationMapper;
+import com.edumatch.EduMatch.models.mappers.RoleMapper;
+import com.edumatch.EduMatch.models.request.AuthenticationRequest;
+import com.edumatch.EduMatch.models.response.AuthenticationResponse;
+import com.edumatch.EduMatch.models.response.ProjectResponse;
+import com.edumatch.EduMatch.models.response.UserResponse;
+import com.edumatch.EduMatch.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Service;
+
+import java.util.Optional;
+
+@RequiredArgsConstructor
+@Service
+public class UserAuthServiceImpl implements UserAuthService {
+
+    private final JwtUtil jwtTokenUtil;
+
+    private final AuthenticationManager authenticationManager;
+
+    private final AuthenticationMapper authenticationMapper;
+
+    private final UserDetailsCustomService userDetailsCustomService;
+
+    private final UserRepository userRepository;
+
+    private final RoleMapper roleMapper;
+
+    @Override
+    public AuthenticationResponse loginAttempt(AuthenticationRequest authenticationRequest) {
+        UserDetails userDetails = userDetailsCustomService.loadUserByUsername(authenticationRequest.getEmail());
+        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
+                authenticationRequest.getEmail(),
+                authenticationRequest.getPassword(),
+                userDetails.getAuthorities()
+        );
+        authenticationManager.authenticate(authenticationToken);
+        // Build Response:
+        String jwt = jwtTokenUtil.generateToken(userDetails);
+        return authenticationMapper.userDetailsAndJwt2LoginResponseDTO(userDetails, jwt);
+    }
+
+    @Override
+    public UserResponse meData(String userMail){
+
+        Optional<UserEntity> user = userRepository.findByEmail(userMail);
+
+        return UserResponse.builder()
+                .id(user.get().getId())
+                .firstName(user.get().getFirstName())
+                .lastName(user.get().getLastName())
+                .email(user.get().getEmail())
+                .photo(user.get().getPhoto())
+                .roles(roleMapper.entity2DTO(user.get().getRoles()))
+                .projects(ProjectResponse.listToDTO(user.get().getProjects()))
+                .build();
+    }
+
+
+}
