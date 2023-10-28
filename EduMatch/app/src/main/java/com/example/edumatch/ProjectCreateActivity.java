@@ -58,7 +58,7 @@ public class ProjectCreateActivity extends AppCompatActivity {
                 ProjectResponse proyecto = new ProjectResponse();
                 proyecto.setName(nombreProyecto);
                 proyecto.setDescription(descripcionProyecto);
-                //proyecto.setEmail(emailUsuario);
+                proyecto.setEmail(emailUsuario);
 
                 // Crea una instancia de Retrofit y ProjectApi
                 Retrofit retrofit = new Retrofit.Builder()

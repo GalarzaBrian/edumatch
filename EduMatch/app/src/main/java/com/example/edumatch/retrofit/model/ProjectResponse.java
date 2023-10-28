@@ -3,6 +3,8 @@ package com.example.edumatch.retrofit.model;
 public class ProjectResponse {
 
     private String name;
+
+    private String email;
     private String description;
     private String studyArea;
     private String requirements;
@@ -13,6 +15,14 @@ public class ProjectResponse {
         return "ProjectResponse{" +
                 "name='" + name + '\'' +
                 '}';
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getName() {
