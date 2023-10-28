@@ -72,7 +72,7 @@ fs.readFile("./users.json", (err, data) => {
 // Create token for new user
   const access_token = createToken({email, password})
   console.log("email: " + email, "jwt:" + access_token);
-  res.status(200).json({"email: ":email, "jwt: ": access_token})
+  res.status(200).json({"email":email, "jwt": access_token})
 })
 
 // Login to one of the users from ./users.json
@@ -88,7 +88,7 @@ server.post('/auth/login', (req, res) => {
   }
   const access_token = createToken({email, password})
   console.log("jwt:" + access_token);
-  res.status(200).json({"email: ":email, "jwt: ": access_token})
+  res.status(200).json({"email":email, "jwt": access_token})
 })
 
 server.use(/^(?!\/auth).*$/,  (req, res, next) => {
