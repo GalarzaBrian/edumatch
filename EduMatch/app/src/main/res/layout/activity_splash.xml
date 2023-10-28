@@ -21,15 +21,15 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_width="317dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="68dp"
         android:backgroundTint="#F6F6F6"
         android:text="Iniciar sesión"
         android:textColor="#2ABCED"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.619"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -37,7 +37,7 @@
         android:id="@+id/textView2"
         android:layout_width="183dp"
         android:layout_height="44dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="56dp"
         android:text="¿No tienes cuenta?"
         android:textColor="#F6EEEE"
         android:textSize="20sp"
@@ -51,14 +51,15 @@
         android:id="@+id/button6"
         android:layout_width="150dp"
         android:layout_height="53dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="#673AB7"
         android:text="Registrate"
         android:textColor="#F9FBFB"
         android:textIsSelectable="false"
         android:textSize="20sp"
-        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.586"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/button3" />
 </androidx.constraintlayout.widget.ConstraintLayout>

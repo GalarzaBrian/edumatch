@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,13 +13,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EduMatch"
-        tools:targetApi="31">
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31" >
+        <activity
+            android:name=".ProjectSearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProjectsActivity"
+            android:exported="true" />
         <activity
             android:name=".UserProfile"
             android:exported="true"
-            android:parentActivityName=".HomePageActivity"/>
+            android:parentActivityName=".HomePageActivity" />
         <activity
             android:name=".ProjectCreateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProjectPageActivity"
             android:exported="false" />
         <activity
             android:name=".ContactoActivity"
@@ -27,7 +39,7 @@
             android:exported="false" />
         <activity
             android:name=".SplashActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
