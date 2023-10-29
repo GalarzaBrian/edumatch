@@ -14,73 +14,80 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="200dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:paddingVertical="50dp"
-        android:src="@drawable/carpincho" />
+        android:scaleType="fitCenter"
+        android:src="@drawable/carpincho"
+        android:visibility="visible" />
 
     <com.google.android.material.card.MaterialCardView
 
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
         android:background="@color/seed"
         android:checkable="true"
         android:clickable="true"
         android:focusable="true"
         app:cardBackgroundColor="@color/seed"
         app:cardElevation="0dp"
-        app:strokeColor="@color/md_theme_light_onPrimary"
+        app:strokeColor="@color/seed"
         app:strokeWidth="1dp">
 
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/textView4"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Bienvenido a EDU-MATCH!"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="350dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingHorizontal="40dp"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp">
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
 
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingVertical="40dp"
-                android:text="¡Bienvenido a Edu-Match!"
-                android:textAlignment="center"
-                android:textColor="#FFFFFF" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tfCorreo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Correo"
+                android:paddingTop="20dp"
                 android:paddingBottom="20dp"
                 android:textColorHint="#FFFFFF"
                 app:boxBackgroundMode="outline"
-                app:boxStrokeColor="#5E35B1">
+                app:boxStrokeColor="#FFFFFF">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/LoginMail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:backgroundTintMode="add"
                     android:maxLines="1"
                     android:singleLine="true"
-                    android:textColorHint="#FFFFFF" />
+                    android:textColor="#111111"
+                    android:textColorHint="#FFFFFF"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tfPassword"
+                android:id="@+id/tfContraseña"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Contraseña"
                 android:paddingBottom="30dp"
                 android:textColorHint="#FFFFFF"
                 app:boxBackgroundMode="outline"
-                app:boxStrokeColor="#5E35B1">
+                app:boxStrokeColor="#FFFFFF">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/LoginPassword"
@@ -88,7 +95,9 @@
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
                     android:singleLine="true"
-                    android:textColorHint="#FFFFFF" />
+                    android:textColor="#111111"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -96,18 +105,25 @@
                 android:id="@+id/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#673AB7"
-                android:text="Ingresar" />
+                android:backgroundTint="#5E35B1"
+                android:shadowColor="#3C2767"
+                android:text="Ingresar"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/tvRegister"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:shadowColor="#292828"
                 android:text="¿No tienes una cuenta? Registrate"
                 android:textAlignment="center"
+                android:textColor="#FFFFFF"
                 android:textColorHint="#FFFFFF"
-                android:textColorLink="#FFFFFF" />
+                android:textColorLink="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="normal" />
 
 
         </LinearLayout>
