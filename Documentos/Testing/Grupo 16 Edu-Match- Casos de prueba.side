@@ -1,0 +1,149 @@
+{
+  "id": "d3c5bbef-7812-482c-afc2-8a244311950f",
+  "version": "2.0",
+  "name": "PruebasISPC",
+  "url": "https://www.saucedemo.com/",
+  "tests": [{
+    "id": "b8cc7de9-a440-49ac-b19e-331751b74bd8",
+    "name": "CP1: Ingresar a https://www. saucedemo.co m/ sin datos de entrada",
+    "commands": [{
+      "id": "70a87de4-3c9a-404c-865e-22787c4cf2d2",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.saucedemo.com/",
+      "targets": [],
+      "value": "Abrir página"
+    }, {
+      "id": "3788f9f0-c9e5-4951-8a26-2f11c6388e60",
+      "comment": "",
+      "command": "click",
+      "target": "id=login-button",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "9be17088-648d-4ceb-b799-abe27f66f522",
+    "name": "CP2:Ingresar a https://www. saucedemo.co m/ sólo con usuario",
+    "commands": [{
+      "id": "26f266ea-d2f7-4f11-a395-5b1100637526",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.saucedemo.com/",
+      "targets": [],
+      "value": "Abrir página"
+    }, {
+      "id": "f495d530-4602-4a34-9a69-695b410c1cce",
+      "comment": "",
+      "command": "type",
+      "target": "id=user-name",
+      "targets": [],
+      "value": "standard_user"
+    }, {
+      "id": "96aa7157-966a-4e18-8d08-873bfeda6071",
+      "comment": "",
+      "command": "click",
+      "target": "id=login-button",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "9630d82c-6d12-4b58-8f25-ca40ce5a8613",
+    "name": "CP3:Ingresar a https://www. saucedemo.co m/ sólo con contraseña",
+    "commands": [{
+      "id": "81216ceb-12fd-49d5-8f27-a502bca218a8",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.saucedemo.com/",
+      "targets": [],
+      "value": "Abrir página"
+    }, {
+      "id": "157d1df7-05e9-4ba2-9c16-d52df754b109",
+      "comment": " Ingresa password",
+      "command": "type",
+      "target": "id=password",
+      "targets": [],
+      "value": "secret_sauce"
+    }, {
+      "id": "025fbe04-3cee-488a-88b9-e16df51beb62",
+      "comment": "",
+      "command": "click",
+      "target": "id=login-button",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "425551ce-f195-4850-b458-0970b711e103",
+    "name": "CP4:Ingresar a https://www. saucedemo.co m/ con usuario y contraseña no válidos",
+    "commands": [{
+      "id": "47aad85f-ae67-4286-b3b2-35ce985a15e5",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.saucedemo.com/",
+      "targets": [],
+      "value": "Abrir página"
+    }, {
+      "id": "253d5c8d-5406-4234-a38f-829ad2888a35",
+      "comment": " Ingresa el nombre de usuario invalido",
+      "command": "type",
+      "target": "id=user-name",
+      "targets": [],
+      "value": "userinvalido"
+    }, {
+      "id": "48f1a72c-e158-4044-8ca4-ac91d274ae85",
+      "comment": " Ingresa password invalido",
+      "command": "type",
+      "target": "id=password",
+      "targets": [],
+      "value": "123456"
+    }, {
+      "id": "33016afc-d331-48e2-ab0e-a6cbf589d177",
+      "comment": "",
+      "command": "click",
+      "target": "id=login-button",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "593bebad-653e-4c55-a604-45d5b4704c6e",
+    "name": "CP5:Ingresar a https://www. saucedemo.co m/ con usuario y contraseña válidos",
+    "commands": [{
+      "id": "55124a6a-0e66-4aa1-9469-5fbbf920d751",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.saucedemo.com/",
+      "targets": [],
+      "value": "Abrir página"
+    }, {
+      "id": "a64d1a4f-547d-4f86-9bc0-d12fe5282315",
+      "comment": " Ingresa el nombre de usuario",
+      "command": "type",
+      "target": "id=user-name",
+      "targets": [],
+      "value": "standard_user"
+    }, {
+      "id": "2aaf844f-debf-49f2-91a6-3f599a91bcd8",
+      "comment": " Ingresa password",
+      "command": "type",
+      "target": "id=password",
+      "targets": [],
+      "value": "secret_sauce"
+    }, {
+      "id": "76fabaed-36ad-4489-99c0-8c3e1375248f",
+      "comment": "",
+      "command": "click",
+      "target": "id=login-button",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "c57418a3-8c0e-4a76-ba4a-e4581569e08a",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://www.saucedemo.com/"],
+  "plugins": []
+}
