@@ -10,7 +10,7 @@ public interface UserService {
 
     UserResponse findUserById(Long id);
 
-    void updateUser(UserRequest request, Long id);
+    void updateUser(UserRequest request);
 
     void deleteUser(Long id);
 }

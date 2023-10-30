@@ -2,7 +2,7 @@ package com.example.edumatch.retrofit.model;
 
 public class LoginResponse {
     private String email;
-    private String jwt;
+    public String jwt;
 
 
     public String getEmail() {

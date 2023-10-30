@@ -46,10 +46,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/storage/*").hasRole(ROLE_ADMIN)
 
                 //Users_ADMIN
-                .antMatchers(HttpMethod.GET, "/users").hasRole(ROLE_ADMIN)
-                .antMatchers(HttpMethod.PUT, "/users/{id}").hasAnyRole(ROLE_ADMIN, ROLE_USER)
-                .antMatchers(HttpMethod.GET, "/users/{id}").hasAnyRole(ROLE_ADMIN, ROLE_USER)
-                .antMatchers(HttpMethod.DELETE, "/users/{id}").hasRole(ROLE_USER)
+                .antMatchers(HttpMethod.GET, "/users").permitAll()
+                .antMatchers(HttpMethod.PUT, "/users/{id}").permitAll()
+                .antMatchers(HttpMethod.GET, "/users/{id}").permitAll()
+                .antMatchers(HttpMethod.DELETE, "/users/{id}").permitAll()
 
                 .anyRequest().authenticated()
                 .and().exceptionHandling()

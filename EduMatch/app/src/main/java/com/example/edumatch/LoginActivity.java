@@ -10,6 +10,7 @@ import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -93,9 +94,11 @@ public class LoginActivity extends AppCompatActivity {
 
                             LoginResponse loginResponse = response.body();
 
+                            Log.d("tag",loginResponse.jwt);
+                            System.out.println("loginResponse = " + loginResponse);
                             SharedPreferences sharedPreferences = getSharedPreferences("UserPreferences", Context.MODE_PRIVATE);
                             SharedPreferences.Editor editor = sharedPreferences.edit();
-                            editor.putString("Jwt", loginResponse.getJwt());
+                            editor.putString("Jwt", loginResponse.jwt);
                             editor.putString("MailUsuario", loginResponse.getEmail());
                             editor.apply();
 

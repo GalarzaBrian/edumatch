@@ -27,7 +27,7 @@ public class UserRequest {
     private String photo;
 
     @NotEmpty
-    private List<Integer> roles;
+    private List<Long> roles;
 
     public static UserEntity updateEntity(UserRequest request, UserEntity foundUser, List<RoleEntity> roles) {
 
