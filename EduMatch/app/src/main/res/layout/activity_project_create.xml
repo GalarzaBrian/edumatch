@@ -11,108 +11,108 @@
     android:paddingBottom="50dp"
     tools:context=".ProjectCreateActivity">
 
+
     <com.google.android.material.card.MaterialCardView
 
         android:id="@+id/fondo"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="60dp"
         android:background="@color/seed"
-        android:checkable="true"
-        android:clickable="true"
-        android:focusable="true"
+        android:checkable="false"
+        android:clickable="false"
+        android:focusable="auto"
         app:cardBackgroundColor="@color/seed"
         app:cardElevation="0dp"
         app:strokeColor="#03A9F4">
 
+        <TextView
+            android:id="@+id/titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:text="@string/titulo"
+            android:textAlignment="viewStart"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:ignore="TextContrastCheck" />
+
         <LinearLayout
             android:id="@+id/contenedor"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|center_horizontal"
-            android:baselineAligned="true"
-            android:gravity="center"
+            android:layout_height="500dp"
+            android:layout_marginTop="30dp"
+            android:baselineAligned="false"
+            android:gravity="center_vertical"
             android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/titulo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="50dp"
-                android:text="@string/titulo"
-                android:textAlignment="center"
-                android:textColor="#FFFFFF"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                tools:ignore="TextContrastCheck" />
 
             <EditText
                 android:id="@+id/nombre_project"
                 android:layout_width="match_parent"
                 android:layout_height="58dp"
-                android:background="#E1DFDF"
+                android:layout_marginTop="60dp"
+                android:background="#F6F6F6"
                 android:ems="10"
                 android:hint="@string/nombre_project"
                 android:importantForAutofill="no"
                 android:inputType="text"
                 android:paddingStart="16dp"
+                android:singleLine="false"
                 android:textAlignment="textStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textColor="#4A4545"
-                android:textColorHint="#434343"
                 android:textSize="12sp"
                 android:textStyle="normal"
                 tools:ignore="LabelFor,RtlSymmetry,VisualLintTextFieldSize" />
 
-            <com.google.android.material.textfield.TextInputLayout
+            <EditText
+                android:id="@+id/descripcion"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/descripcion"
-                    android:layout_width="match_parent"
-                    android:layout_height="124dp"
-                    android:layout_marginBottom="5dp"
-                    android:background="#E1DFDF"
-                    android:gravity="left"
-                    android:text="@string/descripcion"
-                    android:textColor="#403F3F"
-                    android:textSize="12sp"
-                    android:textStyle="normal"
-                    app:textInputLayoutFocusedRectEnabled="true"
-                    tools:ignore="RtlHardcoded,VisualLintTextFieldSize" />
-            </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="#F6F6F6"
+                android:ems="10"
+                android:gravity="start"
+                android:hint="@string/descripcion"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:paddingStart="16dp"
+                android:paddingTop="10dp"
+                android:singleLine="false"
+                android:textSize="12sp"
+                tools:ignore="RtlSymmetry,TextContrastCheck,VisualLintTextFieldSize" />
 
             <EditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:layout_marginBottom="10dp"
-                android:background="#E1DFDF"
+                android:background="#F6F6F6"
                 android:ems="10"
                 android:hint="@string/email"
                 android:importantForAutofill="no"
                 android:inputType="textEmailAddress"
                 android:paddingStart="16dp"
-                android:textColor="#FF4A4545"
-                android:textColorHint="#424141"
+                android:singleLine="false"
                 android:textSize="12sp"
                 tools:ignore="LabelFor,RtlSymmetry,VisualLintTextFieldSize" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="66dp"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:background="@color/seed"
+                android:orientation="horizontal"
+                android:paddingTop="50dp">
 
                 <Button
                     android:id="@+id/btn_cancelar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
-                    android:layout_marginLeft="1dp"
-                    android:layout_marginRight="1dp"
                     android:layout_weight="1"
-                    android:backgroundTint="#E1DFDF"
+                    android:backgroundTint="#F6F6F6"
                     android:fontFamily="sans-serif-medium"
                     android:text="@string/btn_cancelar"
                     android:textColor="#070707"
@@ -125,14 +125,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
-                    android:layout_marginLeft="1dp"
-                    android:layout_marginRight="1dp"
                     android:layout_weight="1"
-                    android:backgroundTint="#E26D22CF"
+                    android:backgroundTint="#5E35B1"
+                    android:backgroundTintMode="src_in"
+                    android:shadowColor="#3C2767"
                     android:text="@string/btn_publicar"
                     android:textColor="#FFFFFF"
                     tools:ignore="VisualLintButtonSize" />
-
             </LinearLayout>
 
         </LinearLayout>

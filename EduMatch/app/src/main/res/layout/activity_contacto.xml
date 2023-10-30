@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/seed"
+    android:background="#5E35B1"
     tools:context=".ContactoActivity">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="center|center_horizontal"
-        android:layout_margin="8dp"
+        android:layout_margin="4dp"
         android:background="@color/seed"
         app:cardBackgroundColor="@color/seed">
 
@@ -25,27 +25,29 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="268dp"
-                android:layout_height="139dp"
+                android:layout_width="219dp"
+                android:layout_height="234dp"
+                android:layout_marginTop="10dp"
                 android:contentDescription="imagen"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/carpincho" />
+                app:srcCompat="@drawable/logo"
+             />
 
             <TextView
                 android:id="@+id/etContacto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/seed"
+                android:layout_marginTop="10dp"
                 android:text="Contacto"
                 android:textAlignment="center"
                 android:textColor="@android:color/white"
-                android:textSize="30dp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
                 app:boxBackgroundColor="@color/md_theme_dark_inverseSurface">
 
@@ -54,12 +56,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:ems="10"
+                    android:backgroundTint="#F6F6F6"
                     android:hint="Ingrese su correo electrónico"
                     android:inputType="textEmailAddress"
                     android:textColor="@android:color/widget_edittext_dark"
-                    android:textColorHint="@android:color/widget_edittext_dark"
-                    android:textStyle="bold" />
+                    android:textColorHint="#111111"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -72,13 +75,14 @@
                     android:id="@+id/etAsunto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
                     android:layout_weight="1"
-                    android:ems="10"
+                    android:backgroundTint="#F6F6F6"
                     android:hint="Asunto"
                     android:inputType="text"
                     android:textColor="@android:color/widget_edittext_dark"
-                    android:textStyle="bold" />
+                    android:textColorHint="#111111"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -90,26 +94,28 @@
                     android:id="@+id/etMensajes"
                     android:layout_width="match_parent"
                     android:layout_height="154dp"
-                    android:layout_marginBottom="10dp"
                     android:layout_weight="1"
-                    android:ems="10"
+                    android:backgroundTint="#F6F6F6"
                     android:gravity="start|top"
                     android:hint="Ingrese su mensaje"
                     android:inputType="textMultiLine"
                     android:shadowColor="@color/md_theme_dark_background"
                     android:textColor="@android:color/widget_edittext_dark"
-                    android:textColorHint="@color/md_theme_dark_background"
-                    android:textStyle="bold" />
+                    android:textColorHint="#111111"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
                 android:id="@+id/btnEnviar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#5E35B1"
                 android:text="Enviar"
-                android:textSize="30dp"
-                android:textStyle="bold" />
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="normal" />
 
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
