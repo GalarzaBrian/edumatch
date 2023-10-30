@@ -1,14 +1,17 @@
 package com.example.edumatch;
+import com.example.edumatch.retrofit.Constants;
+import com.example.edumatch.retrofit.model.ProjectResponse;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.example.edumatch.retrofit.interfaces.ProjectApi;
-import com.example.edumatch.retrofit.model.ProjectResponse;
 
 import java.util.List;
 
@@ -21,7 +24,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ProjectsActivity extends AppCompatActivity {
 
     List<ProjectResponse> projects;
-    private String auth = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBtYWlsIiwiZXhwIjoxNjk2ODE0ODU5LCJpYXQiOjE2OTY3Mjg0NTl9.tKCslRoRe5D0XWDHjrlpC0aUpfiRmJxIM9llPZkKdsk" ;
+
+    SharedPreferences sharedPreferences = getSharedPreferences("UserPreferences", Context.MODE_PRIVATE);
+    String jwtToken = sharedPreferences.getString("Jwt", null);
+
+    private String auth = "Bearer " + jwtToken ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +39,7 @@ public class ProjectsActivity extends AppCompatActivity {
 
     private void getProjects(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.56.1:8080/")
+                .baseUrl(Constants.URL_BASE)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

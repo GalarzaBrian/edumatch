@@ -11,7 +11,7 @@ public class HomePageActivity extends AppCompatActivity {
 
     Button btnContacto;
     Button btnProfile;
-
+    Button btnProyecto;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +22,17 @@ public class HomePageActivity extends AppCompatActivity {
         btnContacto = findViewById(R.id.btnContacto);
         btnProfile = findViewById(R.id.button_profile);
         Button btn_proyecto = (Button) findViewById(R.id.button_registrar_proyecto);
+        btnProyecto = findViewById(R.id.button_mi_proyecto);
 
+
+        btnProyecto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Intent para iniciar ProjectDetailActivity
+                Intent intent = new Intent(HomePageActivity.this, ProjectDetailActivity.class);
+                startActivity(intent);
+            }
+        });
 
         btnContacto.setOnClickListener(new View.OnClickListener() {
             @Override
