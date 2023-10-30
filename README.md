@@ -9,10 +9,10 @@
 
 ## Integrantes
 
-* Paula Cabrera
-* Daniel Vargas
-* Belen Riquelme
-* Roberto Carlos Osores
+* [Paula Cabrera](https://github.com/Paulac23)
+* [Daniel Vargas](https://github.com/danit3x)
+* [Belen Riquelme](https://github.com/bely092)
+* [Roberto Carlos Osores](https://github.com/Roberto-Osores)
 * [Gonzalez Matias Nicolas](https://github.com/MatiasGonzalez1)
-* David Spuler
-* Brian ivan galarza
+* [David Spuler](https://github.com/davidspuler)
+* [Brian ivan galarza](https://github.com/GalarzaBrian)
