@@ -2,7 +2,8 @@
 
 > Este repositorio estará dedicado a la gestión del nuevo proyecto del módulo "Programador de aplicaciones móviles", perteneciente al Instituto Superior Politécnico Córdoba.
 >
-
+<hr>
+“Edu-Match” será un producto diseñado para trabajar en dispositivos móviles con sistema operativo Android, lo que permitirá su utilización de manera generalizada, rápida y eficaz. Contará con una interfaz sencilla y clara, siendo una prioridad que su uso sea fácil y rápido.
 <br>
 <br>
 <img src= src/logo.svg height= 450px>
