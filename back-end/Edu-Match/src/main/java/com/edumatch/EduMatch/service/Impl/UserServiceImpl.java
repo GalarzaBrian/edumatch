@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -37,13 +38,15 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public void updateUser(UserRequest request, Long id) {
-        UserEntity foundUser = userRepository.findById(id).orElseThrow();
+    public void updateUser(UserRequest request) {
+        String email = request.getEmail();
+        Optional<UserEntity> id = userRepository.findByEmail(email);
+        UserEntity foundUser = userRepository.findById(id.get().getId()).orElseThrow();
 
-        List<Integer> roleId = request.getRoles();
+        List<Long> roleId = request.getRoles();
         List<RoleEntity> roleEntities = new ArrayList<>();
 
-        for (Integer roleIntegerId : roleId) {
+        for (Long roleIntegerId : roleId) {
             roleEntities.add(roleRepository.getById(roleIntegerId));
         }
 

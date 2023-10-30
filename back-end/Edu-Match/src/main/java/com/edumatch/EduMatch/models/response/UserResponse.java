@@ -17,7 +17,7 @@ public class UserResponse {
 
     private static final RoleMapper roleMapper = new RoleMapper();
 
-    private Long id;
+//    private Long id;
 
     private String firstName;
 
@@ -25,9 +25,9 @@ public class UserResponse {
 
     private String email;
 
-    private String photo;
+    private String about;
 
-    private List<RoleDTO> roles;
+//    private List<RoleDTO> roles;
 
     private List<ProjectResponse> projects;
 
@@ -35,12 +35,12 @@ public class UserResponse {
         if (entity == null) return null;
 
         return UserResponse.builder()
-                .id(entity.getId())
+//                .id(entity.getId())
                 .firstName(entity.getFirstName())
                 .lastName(entity.getLastName())
                 .email(entity.getEmail())
-                .photo(entity.getPhoto())
-                .roles(roleMapper.entity2DTO(entity.getRoles()))
+                .about(entity.getPhoto())
+//                .roles(roleMapper.entity2DTO(entity.getRoles()))
                 .projects(ProjectResponse.listToDTO(entity.getProjects()))
                 .build();
 
@@ -53,12 +53,12 @@ public class UserResponse {
         for (UserEntity temp : users) {
 
             UserResponse obj = new UserResponse();
-            obj.setId(temp.getId());
+//            obj.setId(temp.getId());
             obj.setFirstName(temp.getFirstName());
             obj.setLastName(temp.getLastName());
             obj.setEmail(temp.getEmail());
-            obj.setPhoto(temp.getPhoto());
-            obj.setRoles(roleMapper.entity2DTO(temp.getRoles()));
+            obj.setAbout(temp.getPhoto());
+//            obj.setRoles(roleMapper.entity2DTO(temp.getRoles()));
             obj.setProjects(ProjectResponse.listToDTO(temp.getProjects()));
             result.add(obj);
         }
