@@ -61,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View widget) {
 
-                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+               Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
 
             }
