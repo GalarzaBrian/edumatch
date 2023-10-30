@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -36,29 +37,37 @@ public class ProjectCreateActivity extends AppCompatActivity {
 
             }
         });
+
+        btn_cancela.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick (View view){
+                // deberia ir home
+                Intent intent = new Intent(ProjectCreateActivity.this, HomePageActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
-
+    //Lanza Ventana De Dialogo Cuando se Presiona El boton Publicar
     private void ventanaMensaje() {
         new AlertDialog.Builder(this)
-                .setTitle("Proyecto")
+                .setTitle("EDU-MATCH")
                 .setMessage("Proyecto Cargado Correctamente")
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int which) {
                         Log.d("Mensaje", "Cargo todo Ok");
+                        Intent intent = new Intent(ProjectCreateActivity.this, HomePageActivity.class);
+                        startActivity(intent);
                     }
                 })
                 .show();
+
     }
+
+
+
+
 }
-
-
-//      hay que habilitar cuando se tenga armado el home
-//      btn_cancela.setOnClickListener(new View.OnClickListener() {
-//           @Override
-//           public void onClick(View view) {
-//                // deberia ir home
-//            }
-//        });
 

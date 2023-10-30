@@ -31,7 +31,7 @@
         app:cardBackgroundColor="@color/seed"
         app:cardElevation="0dp"
         app:strokeColor="@color/md_theme_light_onPrimary"
-        app:strokeWidth="5dp">
+        app:strokeWidth="1dp">
 
 
         <LinearLayout
@@ -48,19 +48,24 @@
                 android:layout_height="wrap_content"
                 android:paddingVertical="10dp"
                 android:text="¡Bienvenido a Edu-Match!"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/md_theme_light_onPrimary"
+                android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tfDni"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="DNI"
-                android:paddingBottom="10dp">
+                android:paddingBottom="10dp"
+                android:textColorHint="#FFFFFF"
+                app:boxStrokeColor="#5E35B1">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:singleLine="true"/>
+                    android:inputType="number"
+                    android:singleLine="true" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -69,12 +74,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Correo"
-                android:paddingBottom="10dp">
+                android:paddingBottom="10dp"
+                android:textColorHint="#FFFFFF"
+                app:boxStrokeColor="#5E35B1">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:singleLine="true"/>
+                    android:inputType="textEmailAddress"
+                    android:singleLine="true" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -83,12 +91,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Contraseña"
-                android:paddingBottom="10dp">
+                android:paddingBottom="10dp"
+                android:textColorHint="#FFFFFF"
+                app:boxStrokeColor="#5E35B1">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:singleLine="true"/>
+                    android:inputType="textPassword"
+                    android:singleLine="true" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -97,12 +108,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Repetir Contraseña"
-                android:paddingBottom="20dp">
+                android:paddingBottom="20dp"
+                android:textColorHint="#FFFFFF"
+                app:boxStrokeColor="#5E35B1">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:singleLine="true"/>
+                    android:inputType="textPassword"
+                    android:singleLine="true" />
 
             </com.google.android.material.textfield.TextInputLayout>
 

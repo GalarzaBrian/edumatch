@@ -31,7 +31,7 @@
         app:cardBackgroundColor="@color/seed"
         app:cardElevation="0dp"
         app:strokeColor="@color/md_theme_light_onPrimary"
-        app:strokeWidth="5dp">
+        app:strokeWidth="1dp">
 
 
         <LinearLayout
@@ -57,14 +57,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Correo"
-                android:paddingBottom="20dp">
+                android:paddingBottom="20dp"
+                android:textColorHint="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="#5E35B1">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:maxLines="1"
                     android:singleLine="true"
-                    android:textColor="#FFFFFFFF" />
+                    android:textColorHint="#FFFFFF" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -73,12 +76,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Contraseña"
-                android:paddingBottom="30dp">
+                android:paddingBottom="30dp"
+                android:textColorHint="#FFFFFF"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="#5E35B1">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:singleLine="true"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:singleLine="true"
+                    android:textColorHint="#FFFFFF" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -87,7 +95,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#673AB7"
-                android:text="Button" />
+                android:text="Ingresar" />
 
             <TextView
                 android:id="@+id/tvRegister"
