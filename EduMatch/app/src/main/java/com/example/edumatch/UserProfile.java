@@ -19,12 +19,14 @@ public class UserProfile extends AppCompatActivity {
 
         btn_home =findViewById(R.id.button_home);
 
+
         btn_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(UserProfile.this, HomePageActivity.class);
                 startActivity(intent);
             }
+
         });
     }
 }
