@@ -20,7 +20,7 @@
             android:exported="false" />
         <activity
             android:name=".ProjectSearchActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ProjectsActivity"
             android:exported="true" />

@@ -29,7 +29,7 @@ public class HomePageActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Intent para iniciar ProjectDetailActivity
-                Intent intent = new Intent(HomePageActivity.this, ProjectDetailActivity.class);
+                Intent intent = new Intent(HomePageActivity.this, ProjectSearchActivity.class);
                 startActivity(intent);
             }
         });

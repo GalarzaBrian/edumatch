@@ -1,75 +1,56 @@
 {
-  "projects": [
+  "projects":[
     {
-      "id": 1,
-      "name": "Proyecto 1",
-      "description": "Primer proyecto en backend",
-      "studyArea": "desarrollo de apps",
-      "initDate": "",
-      "endDate": "",
-      "userId": 1
+      "id":1,
+      "name":"Proyecto 1",
+      "description":"Primer proyecto en backend",
+      "studyArea":"desarrollo de apps",
+      "initDate":"",
+      "endDate":"",
+      "userId":1
     },
     {
-      "id": 2,
-      "name": "Proyecto 2",
-      "description": "Primer proyecto en backend",
-      "studyArea": "desarrollo de apps",
-      "initDate": "",
-      "endDate": "",
-      "userId": 1
+      "id":2,
+      "name":"Proyecto 2",
+      "description":"segundo proyecto en backend",
+      "studyArea":"desarrollo de apps",
+      "initDate":"",
+      "endDate":"",
+      "userId":1
     },
     {
-      "id": 3,
-      "name": "Proyecto 3",
-      "description": "Primer proyecto en backend",
-      "studyArea": "desarrollo de apps",
-      "initDate": "",
-      "endDate": "",
-      "userId": 1
+      "id":3,
+      "name":"Proyecto 3",
+      "description":"tercero proyecto en backend",
+      "studyArea":"desarrollo de apps",
+      "initDate":"",
+      "endDate":"",
+      "userId":1
     },
     {
-      "id": 4,
-      "name": "Proyecto 4",
-      "description": "Primer proyecto en backend",
-      "studyArea": "desarrollo de apps",
-      "initDate": "",
-      "endDate": "",
-      "userId": 2
-    },
-    {
-      "id": 5,
-      "name": "Proyecto 5",
-      "description": "Primer proyecto en backend",
-      "studyArea": "desarrollo de apps",
-      "initDate": "",
-      "endDate": "",
-      "userId": 2
-    },
-    {
-      "id": 6,
-      "name": "Proyecto 6",
-      "description": "Primer proyecto en backend",
-      "studyArea": "desarrollo de apps",
-      "initDate": "",
-      "endDate": "",
-      "userId": 3
-    },
-    {
-      "description": "dasdas",
-      "name": "asdasd",
-      "id": 7
-    },
-    {
-      "description": "Descripcion",
-      "email": "",
-      "name": "",
-      "id": 8
-    },
-    {
-      "description": "App web en python",
-      "email": "admin@email.com",
-      "name": "Python",
-      "id": 9
+      "id":4,
+      "name":"Proyecto 4",
+      "description":"cuerto proyecto en backend",
+      "studyArea":"desarrollo de apps",
+      "initDate":"",
+      "endDate":"",
+      "userId":2
+    }, {
+      "id":5,
+      "name":"Proyecto 5",
+      "description":"5 proyecto en backend",
+      "studyArea":"desarrollo de apps",
+      "initDate":"",
+      "endDate":"",
+      "userId":2
+    }, {
+      "id":6,
+      "name":"Proyecto 6",
+      "description":"6 proyecto en backend",
+      "studyArea":"desarrollo de apps",
+      "initDate":"",
+      "endDate":"",
+      "userId":3
     }
   ]
 }
