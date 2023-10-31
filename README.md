@@ -10,6 +10,8 @@
 En Nuestra Wiki se encuentra mas info:
 [Wiki del team](https://github.com/GalarzaBrian/edumatch/wiki)
 
+# Demo de la app:
+[Link demo](https://www.youtube.com/watch?v=Wu6qXcRIxeo)
 <br>
 <br>
 <img src= src/logo.svg height= 450px>
