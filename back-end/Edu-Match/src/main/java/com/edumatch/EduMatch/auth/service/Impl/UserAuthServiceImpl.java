@@ -17,6 +17,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Optional;
 
 @RequiredArgsConstructor
@@ -46,7 +48,10 @@ public class UserAuthServiceImpl implements UserAuthService {
         authenticationManager.authenticate(authenticationToken);
         // Build Response:
         String jwt = jwtTokenUtil.generateToken(userDetails);
-        return authenticationMapper.userDetailsAndJwt2LoginResponseDTO(userDetails, jwt);
+        Date expDate = jwtTokenUtil.extractExpiration(jwt);
+        SimpleDateFormat formatear = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        String formatedDate = formatear.format(expDate);
+        return authenticationMapper.userDetailsAndJwt2LoginResponseDTO(userDetails, jwt, formatedDate);
     }
 
     @Override

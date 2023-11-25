@@ -8,6 +8,7 @@ import com.edumatch.EduMatch.models.response.RegisterResponse;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
 import java.util.List;
 
 @Component
@@ -29,10 +30,11 @@ public class AuthenticationMapper {
                 .build();
     }
 
-    public AuthenticationResponse userDetailsAndJwt2LoginResponseDTO(UserDetails userInContext, String jwt) {
+    public AuthenticationResponse userDetailsAndJwt2LoginResponseDTO(UserDetails userInContext, String jwt, String expDate) {
         return AuthenticationResponse.builder()
                 .email(userInContext.getUsername())
                 .jwt(jwt)
+                .expDate(expDate)
                 .build();
     }
 
