@@ -13,8 +13,8 @@ public interface ProjectService {
 
     ProjectEntity saveProject(ProjectRequest request);
 
-    void updateProject(ProjectRequest request, Long id);
+    void updateProject(ProjectRequest request, Long id, String user);
 
-    void deleteProject(Long id);
+    void deleteProject(Long id,String user);
 
 }

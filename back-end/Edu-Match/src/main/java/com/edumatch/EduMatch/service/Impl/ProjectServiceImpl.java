@@ -53,15 +53,17 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public void updateProject(ProjectRequest request, Long id) {
+    public void updateProject(ProjectRequest request, Long id, String user) {
         ProjectEntity foundProject = projectRepository.findById(id).orElseThrow();
-
+        if (!foundProject.getCreatedBy().equals(user)) throw new IllegalArgumentException("No es propietario de proyecto");
         projectRepository.save(ProjectRequest.updateEntity(request,foundProject));
     }
 
     @Override
-    public void deleteProject(Long id) {
+    public void deleteProject(Long id, String user) {
         ProjectEntity foundProject = projectRepository.findById(id).orElseThrow();
+        if (!foundProject.getCreatedBy().equals(user)) throw new IllegalArgumentException("No es propietario de proyecto");
+
         projectRepository.delete(foundProject);
     }
 }

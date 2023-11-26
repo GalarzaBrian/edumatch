@@ -43,13 +43,18 @@ public class ProjectController {
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public void updateProject(@Valid @RequestBody ProjectRequest request, @PathVariable Long id) {
-        projectService.updateProject(request,id);
+    public void updateProject(@Valid @RequestBody ProjectRequest request,
+                              @PathVariable Long id,
+                              @CurrentSecurityContext(expression = "authentication") Authentication authentication) {
+        String email = authentication.getName();
+        projectService.updateProject(request,id,email);
     }
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteProject(@PathVariable long id){
-        projectService.deleteProject(id);
+    public void deleteProject(@PathVariable long id,
+                              @CurrentSecurityContext(expression = "authentication") Authentication authentication) {
+        String email = authentication.getName();
+        projectService.deleteProject(id, authentication.getName());
     }
 
     @PostMapping

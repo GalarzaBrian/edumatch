@@ -11,4 +11,5 @@ import java.util.Optional;
 public interface ProjectRepository extends JpaRepository<ProjectEntity, Long> {
     List<ProjectEntity> findAllByCreatedBy(String Email);
     Optional<ProjectEntity> findByName(String name);
+
 }
