@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface ProjectService {
     List<ProjectResponse> findAllProjects();
-
+    List<ProjectResponse> findAllProjectsByCreator(String email);
     ProjectResponse findProjectById(Long id);
 
     ProjectEntity saveProject(ProjectRequest request);

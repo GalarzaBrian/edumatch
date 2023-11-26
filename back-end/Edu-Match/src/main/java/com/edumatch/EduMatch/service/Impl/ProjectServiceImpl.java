@@ -23,6 +23,13 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
+    public List<ProjectResponse> findAllProjectsByCreator(String email) {
+        List< ProjectEntity> projectEntities= projectRepository.findAllByCreatedBy(email);
+        return ProjectResponse.listToDTO(projectEntities);
+    }
+
+
+    @Override
     public ProjectResponse findProjectById(Long id) {
         ProjectEntity foundProject = projectRepository.findById(id).orElseThrow();
         return ProjectResponse.toDTO(foundProject);
@@ -30,6 +37,10 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public ProjectEntity saveProject(ProjectRequest request) {
+
+        var isProjectExists = projectRepository.findByName(request.getName());
+        if (isProjectExists.isPresent()) throw new IllegalArgumentException("El nombre de proyecto ya existe");
+
         ProjectEntity newProject =  ProjectEntity.builder()
                 .name(request.getName())
                 .description(request.getDescription())

@@ -5,6 +5,8 @@ import com.edumatch.EduMatch.models.response.ProjectResponse;
 import com.edumatch.EduMatch.service.ProjectService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.CurrentSecurityContext;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,6 +25,14 @@ public class ProjectController {
     @ResponseStatus(HttpStatus.OK)
     public List<ProjectResponse> getAllProjects(){
         return projectService.findAllProjects();
+    }
+
+    @GetMapping("/my")
+    @ResponseStatus(HttpStatus.OK)
+    public List<ProjectResponse> getAllProjectsByCreator(@CurrentSecurityContext(expression = "authentication") Authentication authentication) {
+        String email = authentication.getName();
+        return projectService.findAllProjectsByCreator(email);
+
     }
 
     @GetMapping("/{id}")
