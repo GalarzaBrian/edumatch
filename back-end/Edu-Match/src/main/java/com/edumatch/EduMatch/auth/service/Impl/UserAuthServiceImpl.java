@@ -60,13 +60,10 @@ public class UserAuthServiceImpl implements UserAuthService {
         Optional<UserEntity> user = userRepository.findByEmail(userMail);
 
         return UserResponse.builder()
-//                .id(user.get().getId())
                 .firstName(user.get().getFirstName())
                 .lastName(user.get().getLastName())
                 .email(user.get().getEmail())
                 .about(user.get().getPhoto())
-//                .roles(roleMapper.entity2DTO(user.get().getRoles()))
-                .projects(ProjectResponse.listToDTO(user.get().getProjects()))
                 .build();
     }
 
