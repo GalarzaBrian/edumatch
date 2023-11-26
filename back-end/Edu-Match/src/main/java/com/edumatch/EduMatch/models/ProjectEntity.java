@@ -1,6 +1,5 @@
 package com.edumatch.EduMatch.models;
 
-import com.edumatch.EduMatch.models.response.UserResponse;
 import lombok.*;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
@@ -47,7 +46,6 @@ public class ProjectEntity extends AuditableEntity{
 
     @Override
     public void onPrePersist() {
-
         this.endDate= OffsetDateTime.now().plus(15, ChronoUnit.DAYS);
         super.onPrePersist();
     }
