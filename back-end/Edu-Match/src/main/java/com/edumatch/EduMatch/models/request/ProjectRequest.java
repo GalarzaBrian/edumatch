@@ -21,7 +21,6 @@ public class ProjectRequest {
     private String requirements;
 
     private OffsetDateTime endDate;
-
     public boolean getIsActive() {
         return isActive;
     }
@@ -35,6 +34,7 @@ public class ProjectRequest {
         foundProject.setRequirements(request.getRequirements());
         foundProject.setIsActive(request.getIsActive());
         foundProject.setStudyArea(request.getStudyArea());
+        foundProject.setEndDate(request.getEndDate());
 
         return foundProject;
     }

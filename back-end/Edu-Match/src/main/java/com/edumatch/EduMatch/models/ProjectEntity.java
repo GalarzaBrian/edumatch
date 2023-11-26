@@ -7,6 +7,7 @@ import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.time.OffsetDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 @Getter
@@ -44,4 +45,10 @@ public class ProjectEntity extends AuditableEntity{
     @ManyToMany(mappedBy = "projects")
     private List<UserEntity> users;
 
-}
+    @Override
+    public void onPrePersist() {
+
+        this.endDate= OffsetDateTime.now().plus(15, ChronoUnit.DAYS);
+        super.onPrePersist();
+    }
+    }
