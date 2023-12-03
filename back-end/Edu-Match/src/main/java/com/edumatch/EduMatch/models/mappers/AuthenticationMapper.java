@@ -23,10 +23,11 @@ public class AuthenticationMapper {
         return newUser;
     }
 
-    public RegisterResponse entity2RegisterResponseDTO(UserEntity userEntity, String jwt) {
+    public RegisterResponse entity2RegisterResponseDTO(UserEntity userEntity, String jwt, String expDate) {
         return RegisterResponse.builder()
                 .email(userEntity.getEmail())
                 .jwt(jwt)
+                .expDate(expDate)
                 .build();
     }
 

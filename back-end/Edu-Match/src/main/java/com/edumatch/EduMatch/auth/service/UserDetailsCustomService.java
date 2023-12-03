@@ -18,7 +18,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.text.SimpleDateFormat;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -61,7 +63,11 @@ public class UserDetailsCustomService implements UserDetailsService {
         );
 
         String jwt = jwtTokenUtil.generateToken(newUserDetail);
-        return userMapper.entity2RegisterResponseDTO(newUser, jwt);
+        Date expDate = jwtTokenUtil.extractExpiration(jwt);
+        SimpleDateFormat formatear = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        String formatedDate = formatear.format(expDate);
+
+        return userMapper.entity2RegisterResponseDTO(newUser, jwt,formatedDate);
 
     }
 

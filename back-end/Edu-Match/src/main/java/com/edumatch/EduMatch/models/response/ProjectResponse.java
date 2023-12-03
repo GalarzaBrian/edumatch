@@ -57,7 +57,7 @@ public class ProjectResponse {
             obj.setEndDate(temp.getEndDate());
             obj.setStudyArea(temp.getStudyArea());
             obj.setRequirements(temp.getRequirements());
-
+            obj.setUsers(UserInProjectResponse.toListDTO(temp.getUsers()));
             result.add(obj);
 
         }
