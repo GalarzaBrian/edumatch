@@ -1,5 +1,6 @@
 package com.edumatch.EduMatch.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
@@ -9,7 +10,9 @@ import javax.validation.constraints.NotNull;
 
 import java.time.OffsetDateTime;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 @Getter
@@ -64,7 +67,10 @@ public class UserEntity extends AuditableEntity {
     )
     private Collection<RoleEntity> roles;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY, cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    })
     @JoinTable(
             name = "user_project",
             joinColumns = @JoinColumn(
@@ -72,5 +78,5 @@ public class UserEntity extends AuditableEntity {
             inverseJoinColumns = @JoinColumn(
                     name = "project_id", referencedColumnName = "id")
     )
-    private List<ProjectEntity> projects;
+    private Set<ProjectEntity> projects = new HashSet<>();
 }

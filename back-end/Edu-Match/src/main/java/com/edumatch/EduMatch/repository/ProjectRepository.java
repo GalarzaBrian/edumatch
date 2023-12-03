@@ -12,4 +12,5 @@ public interface ProjectRepository extends JpaRepository<ProjectEntity, Long> {
     List<ProjectEntity> findAllByCreatedBy(String Email);
     Optional<ProjectEntity> findByName(String name);
 
+    List<ProjectEntity> findProjectsByUsersId(Long UserId);
 }

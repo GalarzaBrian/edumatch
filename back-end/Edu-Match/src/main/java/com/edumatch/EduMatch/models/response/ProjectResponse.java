@@ -3,10 +3,10 @@ package com.edumatch.EduMatch.models.response;
 import com.edumatch.EduMatch.models.ProjectEntity;
 import com.edumatch.EduMatch.models.UserEntity;
 import lombok.*;
-
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @RequiredArgsConstructor
 @AllArgsConstructor
@@ -29,7 +29,7 @@ public class ProjectResponse {
 
     private boolean isActive;
 
-    private List<UserEntity> users;
+    private Set<UserInProjectResponse> users;
 
     public static ProjectResponse toDTO(ProjectEntity entity){
         if (entity == null) return null;
@@ -41,7 +41,7 @@ public class ProjectResponse {
                 .endDate(entity.getEndDate())
                 .studyArea(entity.getStudyArea())
                 .description(entity.getDescription())
-                .users(List.of(UserEntity.builder().id(entity.getId()).build()))
+                .users(UserInProjectResponse.toListDTO(entity.getUsers()))
                 .build();
     }
 
@@ -51,6 +51,7 @@ public class ProjectResponse {
         for (ProjectEntity temp : entities){
 
             ProjectResponse obj = new ProjectResponse();
+            obj.setId(temp.getId());
             obj.setName(temp.getName());
             obj.setDescription(temp.getDescription());
             obj.setEndDate(temp.getEndDate());

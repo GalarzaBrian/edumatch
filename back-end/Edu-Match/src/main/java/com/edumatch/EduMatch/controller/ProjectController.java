@@ -1,10 +1,13 @@
 package com.edumatch.EduMatch.controller;
 
+import com.edumatch.EduMatch.models.UserEntity;
 import com.edumatch.EduMatch.models.request.ProjectRequest;
 import com.edumatch.EduMatch.models.response.ProjectResponse;
+import com.edumatch.EduMatch.models.response.UserInProjectResponse;
 import com.edumatch.EduMatch.service.ProjectService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.CurrentSecurityContext;
 import org.springframework.validation.annotation.Validated;
@@ -12,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Set;
 
 @RequiredArgsConstructor
 @RestController
@@ -59,8 +63,26 @@ public class ProjectController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void saveProject(@RequestBody ProjectRequest request){
+    public void saveProject( @Valid @RequestBody ProjectRequest request){
         projectService.saveProject(request);
     }
+
+    //
+    @PostMapping("/{id}/users")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void applyForProject(@PathVariable Long id,
+                                @CurrentSecurityContext(expression = "authentication") Authentication authentication) {
+        String email = authentication.getName();
+        projectService.applyForProject(id, email);
+
+    }
+
+    //Obtener los usuarios anotados al proyecto
+    @GetMapping("/{id}/users")
+    @ResponseStatus(HttpStatus.OK)
+    public Set<UserInProjectResponse> findUserByProject(@PathVariable Long id){
+        Set<UserEntity> estudiantes = projectService.findUserByProject(id);
+        return UserInProjectResponse.toListDTO(estudiantes);
+    };
 
 }

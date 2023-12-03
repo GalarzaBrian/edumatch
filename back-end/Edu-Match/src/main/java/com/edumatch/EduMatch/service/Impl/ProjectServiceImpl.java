@@ -1,20 +1,25 @@
 package com.edumatch.EduMatch.service.Impl;
 
 import com.edumatch.EduMatch.models.ProjectEntity;
+import com.edumatch.EduMatch.models.UserEntity;
 import com.edumatch.EduMatch.models.request.ProjectRequest;
 import com.edumatch.EduMatch.models.response.ProjectResponse;
 import com.edumatch.EduMatch.repository.ProjectRepository;
+import com.edumatch.EduMatch.repository.UserRepository;
 import com.edumatch.EduMatch.service.ProjectService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
 public class ProjectServiceImpl implements ProjectService {
 
     private final ProjectRepository projectRepository;
+    private final UserRepository userRepository;
 
     @Override
     public List<ProjectResponse> findAllProjects() {
@@ -66,4 +71,29 @@ public class ProjectServiceImpl implements ProjectService {
 
         projectRepository.delete(foundProject);
     }
+
+    @Override
+    public void applyForProject(Long id, String email) {
+
+        UserEntity user = userRepository.findByEmail(email).orElseThrow();
+
+        ProjectEntity project = projectRepository.findById(id).orElseThrow();
+
+        if(project.getUsers().equals(email)){
+            throw new IllegalArgumentException("Ya estas anotado al proyecto");
+        }
+
+        if(project.getIsActive() && !project.isDeleted()){
+            project.getUsers().add(user);
+            projectRepository.save(project);
+        }
+    }
+
+    @Override
+    public Set<UserEntity> findUserByProject(Long id) {
+        Optional<ProjectEntity> cursoOptional = projectRepository.findById(id);
+        return cursoOptional.map(ProjectEntity::getUsers).orElse(null);
+    }
+
+
 }
