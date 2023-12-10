@@ -67,71 +67,75 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         };
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                Intent intent = new Intent(LoginActivity.this, HomePageActivity.class);
-//                startActivity(intent);
+        button.setOnClickListener(v -> {
 
-                String email = emailEdt.getText().toString();
-                String password=passwordEdt.getText().toString();
 
-                Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl(Constants.URL_BASE)
-                        .addConverterFactory(GsonConverterFactory.create())
-                        .build();
+            String email = emailEdt.getText().toString();
+            String password=passwordEdt.getText().toString();
 
-                UserApi userApi = retrofit.create(UserApi.class);
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(Constants.URL_BASE)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
 
-                LoginRequest loginRequest = new LoginRequest(email,password);
+            UserApi userApi = retrofit.create(UserApi.class);
 
-                Call<LoginResponse> call = userApi.loginUser(loginRequest);
+            LoginRequest loginRequest = new LoginRequest(email,password);
 
-                call.enqueue(new Callback<LoginResponse>() {
-                    @Override
-                    public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                        if(response.isSuccessful()){
+            Call<LoginResponse> call = userApi.loginUser(loginRequest);
 
-                            LoginResponse loginResponse = response.body();
+            call.enqueue(new Callback<LoginResponse>() {
+                @Override
+                public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                    if(response.isSuccessful()){
 
-                            Log.d("tag",loginResponse.jwt);
-                            System.out.println("loginResponse = " + loginResponse);
-                            SharedPreferences sharedPreferences = getSharedPreferences("UserPreferences", Context.MODE_PRIVATE);
-                            SharedPreferences.Editor editor = sharedPreferences.edit();
-                            editor.putString("Jwt", loginResponse.jwt);
-                            editor.putString("MailUsuario", loginResponse.getEmail());
-                            editor.apply();
+                        LoginResponse loginResponse = response.body();
 
-                            Toast.makeText(LoginActivity.this, "Logueo exitoso", Toast.LENGTH_LONG).show();
+                        Log.d("tag",loginResponse.jwt);
+                        System.out.println("loginResponse = " + loginResponse);
+                        SharedPreferences sharedPreferences = getSharedPreferences("UserPreferences", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("Jwt", loginResponse.jwt);
+                        editor.putString("MailUsuario", loginResponse.getEmail());
+                        editor.putBoolean("isOffline", false);
+                        editor.apply();
 
-                            Intent intent = new Intent(LoginActivity.this, HomePageActivity.class);
-                            startActivity(intent);
+                        Toast.makeText(LoginActivity.this, "Logueo exitoso", Toast.LENGTH_LONG).show();
 
-                        } else{
+                        Intent intent = new Intent(LoginActivity.this, HomePageActivity.class);
+                        startActivity(intent);
 
-                            int statusCode = response.code();
-                            String errorMessage = "Ocurrio un error";
+                    } else{
 
-                            try {
-                                Converter<ResponseBody, ErrorResponse> errorConverter =
-                                        retrofit.responseBodyConverter(ErrorResponse.class, new Annotation[0]);
-                                ErrorResponse error = errorConverter.convert(response.errorBody());
-                                errorMessage = error.getMessage();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
+                        int statusCode = response.code();
+                        String errorMessage = "Ocurrio un error";
 
-                            Toast.makeText(LoginActivity.this, "Error: " + errorMessage, Toast.LENGTH_LONG).show();
+                        try {
+                            Converter<ResponseBody, ErrorResponse> errorConverter =
+                                    retrofit.responseBodyConverter(ErrorResponse.class, new Annotation[0]);
+                            ErrorResponse error = errorConverter.convert(response.errorBody());
+                            errorMessage = error.getMessage();
+                        } catch (IOException e) {
+                            e.printStackTrace();
                         }
 
+                        Toast.makeText(LoginActivity.this, "Error: " + errorMessage, Toast.LENGTH_LONG).show();
                     }
 
-                    @Override
-                    public void onFailure(Call<LoginResponse> call, Throwable t) {
-                        Toast.makeText(LoginActivity.this, "Error inesperado ", Toast.LENGTH_LONG).show();
-                    }
-                });
-            }
+                }
+
+                @Override
+                public void onFailure(Call<LoginResponse> call, Throwable t) {
+                    Toast.makeText(LoginActivity.this, "No se pudo conectar al servidor. Ingresando offline ", Toast.LENGTH_SHORT).show();
+                    SharedPreferences sharedPreferences = getSharedPreferences("UserPreferences", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putBoolean("isOffline", true);
+                    editor.apply();
+                    Intent intent = new Intent(LoginActivity.this, HomePageActivity.class);
+                    startActivity(intent);
+
+                }
+            });
         });
 
 

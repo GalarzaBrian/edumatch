@@ -10,9 +10,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.edumatch.db.MyDataSource;
 import com.example.edumatch.retrofit.Constants;
 import com.example.edumatch.retrofit.interfaces.ProjectApi;
 import com.example.edumatch.retrofit.model.ProjectRequest;
@@ -27,6 +29,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ProjectCreateActivity extends AppCompatActivity {
     private String auth;
 
+    private MyDataSource myDataSource;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +64,7 @@ public class ProjectCreateActivity extends AppCompatActivity {
                 ProjectResponse proyecto = new ProjectResponse();
                 proyecto.setName(nombreProyecto);
                 proyecto.setDescription(descripcionProyecto);
-                proyecto.setEmail(emailUsuario);
+                //proyecto.setEmail(emailUsuario);
 
                 // Crea una instancia de Retrofit y ProjectApi
                 Retrofit retrofit = new Retrofit.Builder()
@@ -76,10 +79,12 @@ public class ProjectCreateActivity extends AppCompatActivity {
                 //modificacion del codigo por brian
                 SharedPreferences sharedPreferences = getSharedPreferences("UserPreferences", Context.MODE_PRIVATE);
                 String jwtToken = sharedPreferences.getString("Jwt", null);
+                Boolean isOnline = sharedPreferences.getBoolean("online", false);
                 Log.d("TAG", "token "+ jwtToken);
                 jwtToken = "Bearer "+ jwtToken;
 
-                if (jwtToken != null) {
+                if(isOnline){
+                    if (jwtToken != null) {
                     Call<ProjectResponse> call = projectApi.createProject(jwtToken, proyecto);
                     call.enqueue(new Callback<ProjectResponse>() {
                         @Override
@@ -104,11 +109,23 @@ public class ProjectCreateActivity extends AppCompatActivity {
                         public void onFailure(Call<ProjectResponse> call, Throwable t) {
                             // La solicitud falló debido a un error de red, muestra un mensaje de error si es necesario
                             // Log.e("Error", "Error de red: " + t.getMessage());
-                        }
+                            MyDataSource myDataSource1 = new MyDataSource(ProjectCreateActivity.this);
+                            myDataSource1.open();
+                            Long objeto = myDataSource1.insertProject(nombreProyecto, descripcionProyecto, emailUsuario);
+                            Log.d("Mensaje", "Cargo offline Ok :" + objeto);
+                            myDataSource1.close();}
                     });
                 } else {
-                    // El token JWT no se encontró en SharedPreferences
+                        Toast.makeText(ProjectCreateActivity.this, "no estas logueado",Toast.LENGTH_SHORT).show();
+                }}
+                else{
+                    MyDataSource myDataSource1 = new MyDataSource(ProjectCreateActivity.this);
+                    myDataSource1.open();
+                    Long objeto = myDataSource1.insertProject(nombreProyecto, descripcionProyecto, emailUsuario);
+                    Log.d("Mensaje", "Cargo offline Ok :" + objeto);
+                    myDataSource1.close();
                 }
+
             }
         });
 

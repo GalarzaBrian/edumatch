@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 
 import android.text.SpannableString;
@@ -26,7 +28,9 @@ import com.example.edumatch.retrofit.model.RegisterResponse;
 
 import java.io.IOException;
 import java.lang.annotation.Annotation;
+import java.util.concurrent.TimeUnit;
 
+import okhttp3.OkHttpClient;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -55,66 +59,83 @@ public class RegisterActivity extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //obtener valores de los edtext
                 String email=emailEdt.getText().toString();
                 String dniString=dniEdt.getText().toString();
                 Long dni = Long.parseLong(dniString);
                 String password=passwordEdt.getText().toString();
                 Long roleId =1L;
 
-                Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl(Constants.URL_BASE)
-                        .addConverterFactory(GsonConverterFactory.create())
-                        .build();
+                ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+                NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+                if (networkInfo != null && networkInfo.isConnectedOrConnecting()) {
+                    // Hay conexión a Internet
+                    Toast.makeText(RegisterActivity.this, "Conexión a Internet", Toast.LENGTH_LONG).show();
+                    OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder();
+                    httpClientBuilder.connectTimeout(10, TimeUnit.SECONDS); // Tiempo máximo de espera para la conexión
+                    httpClientBuilder.readTimeout(10, TimeUnit.SECONDS);    // Tiempo máximo de espera para la lectura de datos
+                    httpClientBuilder.writeTimeout(10, TimeUnit.SECONDS);   // Tiempo máximo de espera para la escritura de datos
 
-                UserApi userApi = retrofit.create(UserApi.class);
+                    Retrofit retrofit = new Retrofit.Builder()
+                            .baseUrl(Constants.URL_BASE)
+                            .addConverterFactory(GsonConverterFactory.create())
+                            .client(httpClientBuilder.build())
+                            .build();
 
-                RegisterRequest registerRequest = new RegisterRequest(dni,email, password,roleId);
+                    UserApi userApi = retrofit.create(UserApi.class);
+
+                    RegisterRequest registerRequest = new RegisterRequest(dni,email, password,roleId);
 
 
-                Call<RegisterResponse> call = userApi.createUser(registerRequest);
-                call.enqueue(new Callback<RegisterResponse>() {
-                    @Override
-                    public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
-                        if(response.isSuccessful()){
+                    Call<RegisterResponse> call = userApi.createUser(registerRequest);
+                    call.enqueue(new Callback<RegisterResponse>() {
+                        @Override
+                        public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+                            if(response.isSuccessful()){
 
-                            RegisterResponse registerResponse = response.body();
+                                RegisterResponse registerResponse = response.body();
 
-                            SharedPreferences sharedPreferences = getSharedPreferences("UserPreferences", Context.MODE_PRIVATE);
-                            SharedPreferences.Editor editor = sharedPreferences.edit();
-                            editor.putString("Jwt", registerResponse.jwt);
-                            editor.putString("MailUsuario", registerResponse.email);
-                            editor.apply();
+                                SharedPreferences sharedPreferences = getSharedPreferences("UserPreferences", Context.MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putString("Jwt", registerResponse.jwt);
+                                editor.putString("MailUsuario", registerResponse.email);
+                                editor.apply();
 
-                            Toast.makeText(RegisterActivity.this, "Usuario creado satisfactoriamente", Toast.LENGTH_LONG).show();
+                                Toast.makeText(RegisterActivity.this, "Usuario creado satisfactoriamente", Toast.LENGTH_LONG).show();
 
-                            Intent intent = new Intent(RegisterActivity.this, HomePageActivity.class);
-                            startActivity(intent);
+                                Intent intent = new Intent(RegisterActivity.this, HomePageActivity.class);
+                                startActivity(intent);
 
-                        } else{
+                            } else{
 
-                            int statusCode = response.code();
-                            String errorMessage = "Ocurrio un error";
+                                int statusCode = response.code();
+                                String errorMessage = "Ocurrio un error";
 
-                            try {
-                                Converter<ResponseBody, ErrorResponse> errorConverter =
-                                        retrofit.responseBodyConverter(ErrorResponse.class, new Annotation[0]);
-                                ErrorResponse error = errorConverter.convert(response.errorBody());
-                                errorMessage = error.getMessage();
-                            } catch (IOException e) {
-                                e.printStackTrace();
+                                try {
+                                    Converter<ResponseBody, ErrorResponse> errorConverter =
+                                            retrofit.responseBodyConverter(ErrorResponse.class, new Annotation[0]);
+                                    ErrorResponse error = errorConverter.convert(response.errorBody());
+                                    errorMessage = error.getMessage();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+
+                                Toast.makeText(RegisterActivity.this, "Error: " + errorMessage, Toast.LENGTH_LONG).show();
                             }
 
-                            Toast.makeText(RegisterActivity.this, "Error: " + errorMessage, Toast.LENGTH_LONG).show();
                         }
 
-                    }
+                        @Override
+                        public void onFailure(Call<RegisterResponse> call, Throwable t) {
 
-                    @Override
-                    public void onFailure(Call<RegisterResponse> call, Throwable t) {
+                            Log.e("hubo un error: ",t.getMessage().toString());
+                        }
+                    });
+                } else {
+                    // No hay conexión a Internet
+                    Toast.makeText(RegisterActivity.this, "No hay conexión a Internet", Toast.LENGTH_LONG).show();
+                }
 
-                        Log.e("hubo un error: ",t.getMessage().toString());
-                    }
-                });
             }
         });
 
